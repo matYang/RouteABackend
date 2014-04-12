@@ -280,7 +280,20 @@
 		<artifactId>stax-api</artifactId>
 		<version>1.0.1</version>
 	</dependency>
-	
+	<!-- AWS dependencies -->
+	<dependency>
+		<groupId>com.amazonaws</groupId>
+		<artifactId>aws-java-sdk</artifactId>
+		<version>1.6.3</version>
+	</dependency>
+	<!-- Local Dependency -->
+	<dependency>
+	    <groupId>com.amazonaws</groupId>
+	    <artifactId>aws-java-sdk-flow-build-tools</artifactId>
+	    <version>1.6.3</version>
+	    <scope>system</scope>
+	    <systemPath>${project.basedir}/lib/aws/aws-java-sdk-flow-build-tools-1.6.3.jar</systemPath>
+	</dependency>
 	<dependency>
 		<groupId>org.aspectj</groupId>
 		<artifactId>aspectjrt</artifactId>
