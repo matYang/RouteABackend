@@ -25,5 +25,6 @@
   <modules>
   	<module>HttpServer</module>   
     <module>UserModule</module>
+    <module>AdminModule</module>
   </modules>
 </project>

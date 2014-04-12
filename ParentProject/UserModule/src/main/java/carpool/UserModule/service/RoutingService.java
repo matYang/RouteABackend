@@ -8,10 +8,6 @@ import org.restlet.routing.Router;
 
 import carpool.HttpServer.common.DebugLog;
 import carpool.HttpServer.configurations.ServerConfig;
-import carpool.UserModule.resources.adminResource.AdminRoutineResource;
-import carpool.UserModule.resources.adminResource.AdminStateChangeResource;
-import carpool.UserModule.resources.adminResource.AdminStatResource;
-import carpool.UserModule.resources.adminResource.AdminVerificationResource;
 import carpool.UserModule.resources.dianmingResource.*;
 import carpool.UserModule.resources.generalResource.*;
 import carpool.UserModule.resources.letterResource.LetterResource;
@@ -210,25 +206,6 @@ public class RoutingService extends Application {
 		String locationDefaultResourcePrefix = "/default";
 		//	 API for location default resources: /api/v1.0/location/default
 		router.attach(ServerConfig.applicationPrefix + ServerConfig.versionPrefix + locationServicePrefix + locationDefaultResourcePrefix, LocationDefaultResource.class);
-
-
-
-		/** --------------------- APIs for Administrator ------------------ **/
-		String adminServicePrefix = "/admin";
-		//   API for single messages:  /api/v1.0/admin/*
-
-		String StateChangeResourcePrefix = "/stateChange";
-		//	API for admin state changes actions on user/message/transaction: /api/v1.0/admin/stateChange
-		router.attach(ServerConfig.applicationPrefix + ServerConfig.versionPrefix + adminServicePrefix + StateChangeResourcePrefix, AdminStateChangeResource.class);
-		String RoutineResourcePrefix = "/routine";
-		//	API for admin to force routine tasks to take place: /api/v1.0/admin/routine
-		router.attach(ServerConfig.applicationPrefix + ServerConfig.versionPrefix + adminServicePrefix + RoutineResourcePrefix, AdminRoutineResource.class);
-		String StatAnalysisPrefix = "/stat";
-		//	API for admin to analyze statistic of data service: /api/v1.0/admin/stat		
-		router.attach(ServerConfig.applicationPrefix + ServerConfig.versionPrefix + adminServicePrefix + StatAnalysisPrefix + "/{type}", AdminStatResource.class);
-		String VerificationPrefix = "/verification";
-		//	API for admin to verification management: /api/v1.0/admin/verification		
-		router.attach(ServerConfig.applicationPrefix + ServerConfig.versionPrefix + adminServicePrefix + VerificationPrefix, AdminVerificationResource.class);
 
 		return router;
 	}
