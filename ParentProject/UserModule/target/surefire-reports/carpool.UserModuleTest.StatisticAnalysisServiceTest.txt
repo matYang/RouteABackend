@@ -1,0 +1,43 @@
+-------------------------------------------------------------------------------
+Test set: carpool.UserModuleTest.StatisticAnalysisServiceTest
+-------------------------------------------------------------------------------
+Tests run: 4, Failures: 3, Errors: 0, Skipped: 0, Time elapsed: 0.378 sec <<< FAILURE!
+carpool.UserModuleTest.StatisticAnalysisServiceTest.testTimeStampAnalysis()  Time elapsed: 0.138 sec  <<< FAILURE!
+java.lang.NoClassDefFoundError: com/amazonaws/auth/AWSCredentials
+	at carpool.UserModuleTest.StatisticAnalysisServiceTest.testTimeStampAnalysis(StatisticAnalysisServiceTest.java:97)
+Caused by: java.lang.ClassNotFoundException: com.amazonaws.auth.AWSCredentials
+	at java.net.URLClassLoader$1.run(URLClassLoader.java:366)
+	at java.net.URLClassLoader$1.run(URLClassLoader.java:355)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at java.net.URLClassLoader.findClass(URLClassLoader.java:354)
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:424)
+	at sun.misc.Launcher$AppClassLoader.loadClass(Launcher.java:308)
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:357)
+	... 19 more
+
+carpool.UserModuleTest.StatisticAnalysisServiceTest.testGetEntireMap()  Time elapsed: 0.115 sec  <<< FAILURE!
+java.lang.NoClassDefFoundError: com/amazonaws/auth/AWSCredentials
+	at carpool.UserModuleTest.StatisticAnalysisServiceTest.testGetEntireMap(StatisticAnalysisServiceTest.java:173)
+Caused by: java.lang.ClassNotFoundException: com.amazonaws.auth.AWSCredentials
+	at java.net.URLClassLoader$1.run(URLClassLoader.java:366)
+	at java.net.URLClassLoader$1.run(URLClassLoader.java:355)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at java.net.URLClassLoader.findClass(URLClassLoader.java:354)
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:424)
+	at sun.misc.Launcher$AppClassLoader.loadClass(Launcher.java:308)
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:357)
+	... 19 more
+
+carpool.UserModuleTest.StatisticAnalysisServiceTest.testGetSpecificList()  Time elapsed: 0.12 sec  <<< FAILURE!
+java.lang.NoClassDefFoundError: com/amazonaws/auth/AWSCredentials
+	at carpool.UserModuleTest.StatisticAnalysisServiceTest.testGetSpecificList(StatisticAnalysisServiceTest.java:310)
+Caused by: java.lang.ClassNotFoundException: com.amazonaws.auth.AWSCredentials
+	at java.net.URLClassLoader$1.run(URLClassLoader.java:366)
+	at java.net.URLClassLoader$1.run(URLClassLoader.java:355)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at java.net.URLClassLoader.findClass(URLClassLoader.java:354)
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:424)
+	at sun.misc.Launcher$AppClassLoader.loadClass(Launcher.java:308)
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:357)
+	... 19 more
+
