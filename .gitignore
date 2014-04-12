@@ -3,6 +3,5 @@
 *.pref
 dump.rdb
 *.class
-*.classpath
 ParentProject/HttpServer/log4j
 */target/*
