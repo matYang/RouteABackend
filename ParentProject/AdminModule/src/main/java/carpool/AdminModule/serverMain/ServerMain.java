@@ -7,12 +7,12 @@ import org.restlet.Component;
 import org.restlet.Server;
 import org.restlet.data.Protocol;
 
+import carpool.AdminModule.service.RoutingService;
 import carpool.HttpServer.common.DebugLog;
 import carpool.HttpServer.configurations.ServerConfig;
 import carpool.HttpServer.configurations.EnumConfig.Gender;
 import carpool.HttpServer.dbservice.LocationDaoService;
 import carpool.HttpServer.factory.JSONFactory;
-import carpool.UserModule.service.*;
 
 
 
@@ -75,16 +75,13 @@ public class ServerMain {
 	public static void main(String... args) throws Exception {
 		DebugLog.initializeLogger();
 		LocationDaoService.init();
-		DebugLog.d("Excuting");
-		// Load server logic
 		try {
 			ServerMain.getInstance().init(args);
 			ServerMain.getInstance().start();
+			DebugLog.d("Excuting");
 		} catch (Exception e) {
-			//log.error("Failed to start server", e);
+			DebugLog.d(e);
 		}
-		Thread thread = new CleanThreadService();
-		thread.start();
 	}
 
 }

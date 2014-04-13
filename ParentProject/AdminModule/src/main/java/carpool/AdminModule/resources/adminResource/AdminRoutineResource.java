@@ -9,7 +9,7 @@ import org.restlet.resource.Get;
 import carpool.HttpServer.configurations.EnumConfig;
 import carpool.HttpServer.configurations.EnumConfig.AdminRoutineAction;
 import carpool.HttpServer.dbservice.admin.AdminService;
-import carpool.UserModule.resources.PseudoResource;
+import carpool.AdminModule.resources.PseudoResource;
 
 public class AdminRoutineResource extends PseudoResource{
 	
