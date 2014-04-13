@@ -1,0 +1,5 @@
+2014-04-13 00:26:37,591 [main] INFO  carpool.HttpServer.common.DebugLog - Excuting
+2014-04-13 00:26:37,670 [main] INFO  carpool.HttpServer.common.DebugLog - ready to start
+2014-04-13 00:26:37,702 [main] INFO  carpool.HttpServer.common.DebugLog - initiaing router::RoutingService
+2014-04-13 00:26:37,721 [Thread-5] INFO  carpool.HttpServer.common.DebugLog - ScheduledClean:: clean scheduled at 4:0:0
+2014-04-13 00:26:37,721 [Thread-5] INFO  carpool.HttpServer.common.DebugLog - ScheduledClean thread starting, cleaning at 4:30AM every day
