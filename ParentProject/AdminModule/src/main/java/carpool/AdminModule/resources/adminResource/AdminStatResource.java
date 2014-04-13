@@ -1,40 +1,18 @@
 package carpool.AdminModule.resources.adminResource;
 
 import java.util.ArrayList;
-import java.util.Calendar;
 import java.util.HashMap;
 import java.util.Map.Entry;
 
 import org.json.JSONArray;
-import org.json.JSONObject;
-import org.restlet.data.Status;
 import org.restlet.ext.json.JsonRepresentation;
 import org.restlet.representation.Representation;
 import org.restlet.resource.Get;
 
-import carpool.HttpServer.aws.*;
-import carpool.HttpServer.carpoolDAO.CarpoolDaoMessage;
-import carpool.HttpServer.carpoolDAO.CarpoolDaoUser;
-import carpool.HttpServer.common.DateUtility;
 import carpool.HttpServer.configurations.DatabaseConfig;
-import carpool.HttpServer.configurations.EnumConfig;
-import carpool.HttpServer.configurations.EnumConfig.AdminRoutineAction;
-import carpool.HttpServer.configurations.EnumConfig.DayTimeSlot;
-import carpool.HttpServer.configurations.EnumConfig.Gender;
-import carpool.HttpServer.configurations.EnumConfig.MessageType;
-import carpool.HttpServer.configurations.EnumConfig.PaymentMethod;
-import carpool.HttpServer.configurations.EnumConfig.UserState;
-import carpool.HttpServer.dbservice.admin.AdminService;
 import carpool.HttpServer.dbservice.admin.StatisticAnalysisOfDataService;
-import carpool.HttpServer.exception.PseudoException;
-import carpool.HttpServer.exception.location.LocationNotFoundException;
-import carpool.HttpServer.exception.validation.ValidationException;
 import carpool.HttpServer.factory.JSONFactory;
-import carpool.HttpServer.model.Location;
-import carpool.HttpServer.model.Message;
-import carpool.HttpServer.model.User;
-import carpool.HttpServer.model.representation.SearchRepresentation;
-import carpool.UserModule.resources.PseudoResource;
+import carpool.AdminModule.resources.PseudoResource;
 
 public class AdminStatResource extends PseudoResource{
 

@@ -11,21 +11,15 @@ import org.restlet.representation.Representation;
 import org.restlet.representation.StringRepresentation;
 import org.restlet.resource.Get;
 import org.restlet.resource.Post;
-import org.restlet.resource.Put;
-
 import carpool.HttpServer.common.DateUtility;
 import carpool.HttpServer.configurations.EnumConfig;
-import carpool.HttpServer.configurations.EnumConfig.AdminRoutineAction;
 import carpool.HttpServer.configurations.EnumConfig.VerificationType;
-import carpool.HttpServer.dbservice.UserDaoService;
 import carpool.HttpServer.dbservice.admin.AdminService;
 import carpool.HttpServer.exception.PseudoException;
 import carpool.HttpServer.factory.JSONFactory;
-import carpool.HttpServer.model.Location;
-import carpool.HttpServer.model.User;
 import carpool.HttpServer.model.identityVerification.DriverVerification;
 import carpool.HttpServer.model.identityVerification.PassengerVerification;
-import carpool.UserModule.resources.PseudoResource;
+import carpool.AdminModule.resources.PseudoResource;
 
 public class AdminVerificationResource extends PseudoResource {
 	
