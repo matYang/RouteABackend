@@ -69,6 +69,7 @@ public class ServerConfig {
 	public static final String DriverVerificationBucket = "DriverVerification";
 	public static final String PassengerVerificationBucket = "PassengerVerification";
 	
+	/* */
 	
 	
 }

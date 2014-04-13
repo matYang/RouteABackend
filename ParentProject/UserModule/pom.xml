@@ -1,5 +1,4 @@
 <?xml version="1.0"?>
-<<<<<<< HEAD
 <project
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd"
 	xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
@@ -48,10 +47,11 @@
 	<build>
 		<resources>
 			<resource>
-				<directory>src</directory>
+				<directory>src/main/resources</directory>
 				<includes>
 					<include>log4j.properties</include>
 				</includes>
+				<targetPath>..</targetPath>
 			</resource>
 		</resources>
 		<plugins>
@@ -71,7 +71,7 @@
 					<archive>
 						<manifest>
 							<addClasspath>true</addClasspath>
-							<classpathPrefix>src/</classpathPrefix>
+							<classpathPrefix>src</classpathPrefix>
 							<mainClass>carpool.UserModule.serverMain.ServerMain</mainClass>
 						</manifest>
 					</archive>
@@ -92,99 +92,4 @@
 
 		</plugins>
 	</build>
-
-=======
-<project xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd" xmlns="http://maven.apache.org/POM/4.0.0"
-    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-  <modelVersion>4.0.0</modelVersion>
-  <parent>
-    <groupId>Carpool</groupId>
-    <artifactId>ParentProject</artifactId>
-    <version>1.0.0</version>
-    <relativePath>..</relativePath>
-  </parent>
-  
-  
-  <groupId>Carpool</groupId>
-  <artifactId>UserModule</artifactId>
-  <version>1.0.0</version>
-  <packaging>jar</packaging>
-  <name>UserModule</name>
-  <url>http://maven.apache.org</url>
-  <properties>
-    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-  </properties>
-  
-  
-  <dependencies>
-    <dependency>
-      <groupId>Carpool</groupId>
-      <artifactId>HttpServer</artifactId>
-      <version>1.0.0</version>
-      <scope>compile</scope>
-    </dependency>   
-    
-    <dependency>
-		<groupId>junit</groupId>
-		<artifactId>junit</artifactId>
-		<version>4.11</version>
-	</dependency>	
-  </dependencies>
-  
-   <build>
-	<plugins>
-		<plugin>
-			<groupId>org.apache.maven.plugins</groupId>
-	        <artifactId>maven-compiler-plugin</artifactId>
-	        <version>2.3.2</version>
-	        <configuration>
-	        	<source>1.7</source>
-	        	<target>1.7</target>
-	        </configuration>
-    	</plugin>
-    	
-    	<plugin>
-	      <artifactId>maven-assembly-plugin</artifactId>
-		  <configuration>
-		    <archive>
-		      <manifest>
-		        <mainClass>carpool.UserModule.serverMain.ServerMain</mainClass>
-		      </manifest>
-		    </archive>
-		    <descriptorRefs>
-		      <descriptorRef>jar-with-dependencies</descriptorRef>
-		    </descriptorRefs>
-		  </configuration>
-		  <executions>
-		    <execution>
-		      <id>make-assembly</id> <!-- this is used for inheritance merges -->
-		      <phase>package</phase> <!-- bind to the packaging phase -->
-		      <goals>
-		        <goal>single</goal>
-		      </goals>
-		    </execution>
-		  </executions>
-	    </plugin>
-	    
-	      <plugin>
-	        <artifactId>maven-jar-plugin</artifactId>
-	        <configuration>
-	          <finalName>${artifactId}-${version}-tmp</finalName>
-	        </configuration>
-	      </plugin>
-	      
-	      <!-- skip unit testing upon buld -->
-	      <plugin>
-			<groupId>org.apache.maven.plugins</groupId>
-			<artifactId>maven-surefire-plugin</artifactId>
-			<version>2.12.4</version>
-			<configuration>
-				<skipTests>true</skipTests>
-			</configuration>
-		  </plugin>
-	</plugins>
-  </build>
-  
-	
->>>>>>> a8a567583c244fe40c3ecae0cffed8f52b91d4ed
 </project>
