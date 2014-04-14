@@ -30,7 +30,7 @@ public class ServerConfig {
 		if (value == null || !value.equals(ENV_TEST) || !value.equals(ENV_PROD)){
 			//local env
 			configurationMap.put("env", "local");
-			configurationMap.put("jdbcUri", "localhost");
+			configurationMap.put("jdbcUri", "localhost:3306/test?allowMultiQueries=true&&characterSetResults=UTF-8&characterEncoding=UTF-8&useUnicode=yes");
 			configurationMap.put("redisUri", "localhost");
 			configurationMap.put("domainName", "localhost:8015");
 			configurationMap.put("redisSearchHistoryUpbound", "6");
@@ -39,7 +39,7 @@ public class ServerConfig {
 		else if (value.equals(ENV_TEST)){
 			//test env
 			configurationMap.put("env", "test");
-			configurationMap.put("jdbcUri", "badstudent.cunzg2tyzsud.us-west-2.rds.amazonaws.com");
+			configurationMap.put("jdbcUri", "badstudent.cunzg2tyzsud.us-west-2.rds.amazonaws.com:3306/test?allowMultiQueries=true&&characterSetResults=UTF-8&characterEncoding=UTF-8&useUnicode=yes");
 			configurationMap.put("redisUri", "redisserver.ppomgu.0001.usw2.cache.amazonaws.com");
 			configurationMap.put("domainName", "www.routea.ca");
 			configurationMap.put("redisSearchHistoryUpbound", "50");
@@ -48,7 +48,7 @@ public class ServerConfig {
 		else{
 			//prod env
 			configurationMap.put("env", "prod");
-			configurationMap.put("jdbcUri", "rdszvbyzfzvbyzf.mysql.rds.aliyuncs.com");
+			configurationMap.put("jdbcUri", "rdszvbyzfzvbyzf.mysql.rds.aliyuncs.com:3306/test?allowMultiQueries=true&&characterSetResults=UTF-8&characterEncoding=UTF-8&useUnicode=yes");
 			configurationMap.put("redisUri", "localhost");
 			configurationMap.put("domainName", "www.routea.ca");
 			configurationMap.put("redisSearchHistoryUpbound", "50");
