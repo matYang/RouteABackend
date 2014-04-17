@@ -4,7 +4,9 @@ import java.text.SimpleDateFormat;
 import java.util.AbstractMap;
 import java.util.Calendar;
 import java.util.HashMap;
+import java.util.Map;
 import java.util.Map.Entry;
+import java.util.concurrent.ConcurrentHashMap;
 
 import carpool.HttpServer.common.DateUtility;
 import carpool.HttpServer.common.DebugLog;
@@ -15,22 +17,48 @@ import carpool.HttpServer.model.Location;
 import carpool.HttpServer.model.representation.SearchRepresentation;
 
 public class ServerConfig {
-	private static final String ENV_VAR_KEY = "C_MAINSERVER_ENV";
-	private static final String ENV_REMOTE = "REMOTE";
-	public static final boolean isOnLocal;
+	private static final String ENV_VAR_KEY = "RA_MAINSERVER_ENV";
+	private static final String ENV_TEST = "RA_TEST";
+	private static final String ENV_PROD = "RA_PROD";
+	
+	//use concurrent hashmap to guarantee thread safety
+	public static final Map<String, String> configurationMap = new ConcurrentHashMap<String, String>();
+	
 	
 	static{
 		String value = System.getenv(ENV_VAR_KEY);
-		if (value != null && value.equals(ENV_REMOTE)){
-			isOnLocal = false;
-		} else{
-			isOnLocal = true;
+		if (value == null || !value.equals(ENV_TEST) || !value.equals(ENV_PROD)){
+			//local env
+			configurationMap.put("env", "local");
+			configurationMap.put("jdbcUri", "localhost:3306/test?allowMultiQueries=true&&characterSetResults=UTF-8&characterEncoding=UTF-8&useUnicode=yes");
+			configurationMap.put("redisUri", "localhost");
+			configurationMap.put("domainName", "localhost:8015");
+			configurationMap.put("redisSearchHistoryUpbound", "6");
+			configurationMap.put("sqlPass", "");
+		} 
+		else if (value.equals(ENV_TEST)){
+			//test env
+			configurationMap.put("env", "test");
+			configurationMap.put("jdbcUri", "badstudent.cunzg2tyzsud.us-west-2.rds.amazonaws.com:3306/test?allowMultiQueries=true&&characterSetResults=UTF-8&characterEncoding=UTF-8&useUnicode=yes");
+			configurationMap.put("redisUri", "redisserver.ppomgu.0001.usw2.cache.amazonaws.com");
+			configurationMap.put("domainName", "www.routea.ca");
+			configurationMap.put("redisSearchHistoryUpbound", "50");
+			configurationMap.put("sqlPass", "badstudent");
+		}
+		else{
+			//prod env
+			configurationMap.put("env", "prod");
+			configurationMap.put("jdbcUri", "badstudent.mysql.rds.aliyuncs.com:3306/db19r3708gdzx5d1?allowMultiQueries=true&&characterSetResults=UTF-8&characterEncoding=UTF-8&useUnicode=yes");
+			configurationMap.put("redisUri", "localhost");
+			configurationMap.put("domainName", "www.routea.ca");
+			configurationMap.put("redisSearchHistoryUpbound", "50");
+			configurationMap.put("sqlPass", "LIFECENTRICo2o");
 		}
 		
 	}
 	
 	public static final int max_recents = 10;
-	public static final String domainName = isOnLocal ? "localhost:8015" : "www.routea.ca";
+	public static final String domainName = configurationMap.get("domainName");
 	public static final boolean cookieEnabled = false;
 	public static final String cookie_userSession = "userSessionCookie";
 	public static final int cookie_maxAge = 5184000; //2 month

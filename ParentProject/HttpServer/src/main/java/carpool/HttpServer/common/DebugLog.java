@@ -53,7 +53,7 @@ public class DebugLog {
 	}
 	
 	public static void d(PseudoModel p){
-		if (ServerConfig.isOnLocal){
+		if (ServerConfig.configurationMap.get("env").equals("local")){
 			JSONObject json = JSONFactory.toJSON(p);
 			log(json.toString());
 		}

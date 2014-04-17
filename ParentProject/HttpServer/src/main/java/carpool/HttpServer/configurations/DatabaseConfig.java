@@ -2,11 +2,9 @@ package carpool.HttpServer.configurations;
 
 public class DatabaseConfig {
 	
-	public static final String RDSDBInstanceUri = "badstudent.cunzg2tyzsud.us-west-2.rds.amazonaws.com";
-	public static final String RedisEndPoint = "redisserver.ppomgu.0001.usw2.cache.amazonaws.com";
-	public static final String localhostUri = "localhost";
-	public static final String jdbcUri = ServerConfig.isOnLocal ? localhostUri : RDSDBInstanceUri;
-	public static final String redisUri = ServerConfig.isOnLocal ? localhostUri : RedisEndPoint;
+
+	public static final String jdbcUri = ServerConfig.configurationMap.get("jdbcUri");
+	public static final String redisUri = ServerConfig.configurationMap.get("redisUri");
 
 	
 	//redis related
@@ -22,7 +20,7 @@ public class DatabaseConfig {
 	public static final int emailActivation_sequenceLength = 15;
 	public static final int forgetPassword_sequenceLength = 30;
 	public static final String redisSearchHistoryPrefix = "usrSRH";
-	public static final int redisSearchHistoryUpbound = ServerConfig.isOnLocal ? 6 : 50;
+	public static final int redisSearchHistoryUpbound = Integer.parseInt(ServerConfig.configurationMap.get("redisSearchHistoryUpbound"));
 	
 	
 	/*sql*/	
@@ -30,7 +28,7 @@ public class DatabaseConfig {
 	public static final String UserSRArrival = "UserSRArrival";
 	public static final String DatabasesDeparture = "DatabasesDeparture";
 	public static final String DatabasesArrival = "DatabasesArrival";
-	public static final String sqlPass = ServerConfig.isOnLocal ? "" : "badstudent";
+	public static final String sqlPass = ServerConfig.configurationMap.get("sqlPass");
 
 	
 	
