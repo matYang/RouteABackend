@@ -4,4 +4,7 @@
 dump.rdb
 *.class
 ParentProject/HttpServer/log4j
-*/target/*
+*/target
+ParentProject/HttpServer/target
+ParentProject/AdminModule/target
+ParentProject/UserModule/target

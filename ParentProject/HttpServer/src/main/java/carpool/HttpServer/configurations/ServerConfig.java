@@ -30,11 +30,11 @@ public class ServerConfig {
 		if (value == null || !value.equals(ENV_TEST) || !value.equals(ENV_PROD)){
 			//local env
 			configurationMap.put("env", "local");
-			configurationMap.put("jdbcUri", "localhost:3306/test?allowMultiQueries=true&&characterSetResults=UTF-8&characterEncoding=UTF-8&useUnicode=yes");
+			configurationMap.put("jdbcUri", "badstudent.mysql.rds.aliyuncs.com:3306/db19r3708gdzx5d1?allowMultiQueries=true&&characterSetResults=UTF-8&characterEncoding=UTF-8&useUnicode=yes");
 			configurationMap.put("redisUri", "localhost");
 			configurationMap.put("domainName", "localhost:8015");
 			configurationMap.put("redisSearchHistoryUpbound", "6");
-			configurationMap.put("sqlPass", "");
+			configurationMap.put("sqlPass", "LIFECENTRICo2o");
 		} 
 		else if (value.equals(ENV_TEST)){
 			//test env
