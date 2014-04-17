@@ -48,7 +48,7 @@ public class ServerConfig {
 		else{
 			//prod env
 			configurationMap.put("env", "prod");
-			configurationMap.put("jdbcUri", "rdszvbyzfzvbyzf.mysql.rds.aliyuncs.com:3306/test?allowMultiQueries=true&&characterSetResults=UTF-8&characterEncoding=UTF-8&useUnicode=yes");
+			configurationMap.put("jdbcUri", "badstudent.mysql.rds.aliyuncs.com:3306/db19r3708gdzx5d1?allowMultiQueries=true&&characterSetResults=UTF-8&characterEncoding=UTF-8&useUnicode=yes");
 			configurationMap.put("redisUri", "localhost");
 			configurationMap.put("domainName", "www.routea.ca");
 			configurationMap.put("redisSearchHistoryUpbound", "50");
