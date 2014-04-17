@@ -38,7 +38,7 @@ public class CarpoolDaoBasic {
 		HikariConfig sqlConfig = new HikariConfig();
 		sqlConfig.setDataSourceClassName("com.mysql.jdbc.jdbc2.optional.MysqlDataSource");
 		sqlConfig.addDataSourceProperty("url", "jdbc:mysql://"+DatabaseConfig.jdbcUri);
-		sqlConfig.addDataSourceProperty("user", "root");
+		sqlConfig.addDataSourceProperty("user", "db19r3708gdzx5d1");
 		sqlConfig.addDataSourceProperty("password", DatabaseConfig.sqlPass);
 		sqlConfig.setPoolName("SQLPool");
 		sqlConfig.setMaxLifetime(1800000l);

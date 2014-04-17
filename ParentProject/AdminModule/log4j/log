@@ -1,15 +1,16 @@
-2014-04-13 13:13:06,603 [main] INFO  carpool.HttpServer.common.DebugLog - Excuting
-2014-04-13 13:13:06,678 [main] INFO  carpool.HttpServer.common.DebugLog - ready to start
-2014-04-13 13:13:06,707 [main] INFO  carpool.HttpServer.common.DebugLog - initiaing router::RoutingService
-2014-04-13 13:13:06,729 [Thread-5] INFO  carpool.HttpServer.common.DebugLog - ScheduledClean:: clean scheduled at 4:0:0
-2014-04-13 13:13:06,729 [Thread-5] INFO  carpool.HttpServer.common.DebugLog - ScheduledClean thread starting, cleaning at 4:30AM every day
-2014-04-13 13:19:37,142 [main] INFO  carpool.HttpServer.common.DebugLog - Excuting
-2014-04-13 13:19:37,219 [main] INFO  carpool.HttpServer.common.DebugLog - ready to start
-2014-04-13 13:19:37,248 [main] INFO  carpool.HttpServer.common.DebugLog - initiaing router::RoutingService
-2014-04-13 13:19:37,268 [Thread-5] INFO  carpool.HttpServer.common.DebugLog - ScheduledClean:: clean scheduled at 4:0:0
-2014-04-13 13:19:37,268 [Thread-5] INFO  carpool.HttpServer.common.DebugLog - ScheduledClean thread starting, cleaning at 4:30AM every day
-2014-04-13 15:57:03,955 [main] INFO  carpool.HttpServer.common.DebugLog - Excuting
-2014-04-13 15:57:04,030 [main] INFO  carpool.HttpServer.common.DebugLog - ready to start
-2014-04-13 15:57:04,059 [main] INFO  carpool.HttpServer.common.DebugLog - initiaing router::RoutingService
-2014-04-13 15:57:04,082 [Thread-5] INFO  carpool.HttpServer.common.DebugLog - ScheduledClean:: clean scheduled at 4:0:0
-2014-04-13 15:57:04,082 [Thread-5] INFO  carpool.HttpServer.common.DebugLog - ScheduledClean thread starting, cleaning at 4:30AM every day
+2014-04-17 15:20:06,970 [main] INFO  carpool.HttpServer.common.DebugLog - ready to start
+2014-04-17 15:20:07,000 [main] INFO  carpool.HttpServer.common.DebugLog - initiaing router::RoutingService
+2014-04-17 15:20:07,005 [main] INFO  carpool.HttpServer.common.DebugLog - Excuting
+2014-04-17 15:24:55,834 [main] INFO  carpool.HttpServer.common.DebugLog - carpool.HttpServer.carpoolDAO.CarpoolDaoBasic got Exception! 
+java.sql.SQLException: Timeout of 10000ms encountered waiting for connection.
+	at com.zaxxer.hikari.HikariPool.getConnection(Unknown Source)
+	at com.zaxxer.hikari.HikariDataSource.getConnection(Unknown Source)
+	at carpool.HttpServer.carpoolDAO.CarpoolDaoBasic.getSQLConnection(CarpoolDaoBasic.java:68)
+	at carpool.HttpServer.carpoolDAO.CarpoolDaoLocation.isLocationPoolEmpty(CarpoolDaoLocation.java:32)
+	at carpool.HttpServer.dbservice.LocationDaoService.init(LocationDaoService.java:29)
+	at carpool.AdminModule.serverMain.ServerMain.main(ServerMain.java:77)
+2014-04-17 15:28:11,476 [main] INFO  carpool.HttpServer.common.DebugLog - Starting to load location data from file: LocationData.txt
+2014-04-17 15:28:11,477 [main] INFO  carpool.HttpServer.common.DebugLog - Location loaded succesfully
+2014-04-17 15:28:11,555 [main] INFO  carpool.HttpServer.common.DebugLog - ready to start
+2014-04-17 15:28:11,584 [main] INFO  carpool.HttpServer.common.DebugLog - initiaing router::RoutingService
+2014-04-17 15:28:11,589 [main] INFO  carpool.HttpServer.common.DebugLog - Excuting
