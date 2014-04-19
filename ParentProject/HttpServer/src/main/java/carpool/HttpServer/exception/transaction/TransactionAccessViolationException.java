@@ -1,6 +1,5 @@
 package carpool.HttpServer.exception.transaction;
 
-import carpool.HttpServer.configurations.EnumConfig.TransactionState;
 import carpool.HttpServer.exception.PseudoException;
 
 public class TransactionAccessViolationException extends PseudoException {

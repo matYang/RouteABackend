@@ -10,12 +10,10 @@ import carpool.HttpServer.carpoolDAO.CarpoolDaoMessage;
 import carpool.HttpServer.common.DateUtility;
 import carpool.HttpServer.common.DebugLog;
 import carpool.HttpServer.configurations.EnumConfig;
-import carpool.HttpServer.configurations.EnumConfig.MessageType;
 import carpool.HttpServer.exception.location.LocationNotFoundException;
 import carpool.HttpServer.exception.message.MessageNotFoundException;
 import carpool.HttpServer.exception.user.UserNotFoundException;
 import carpool.HttpServer.model.Message;
-import carpool.HttpServer.model.representation.SearchRepresentation;
 
 public class MessageCleaner extends CarpoolDaoMessage {
 

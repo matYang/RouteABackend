@@ -3,23 +3,13 @@ package carpool.UserModule.resources.letterResource;
 import java.util.ArrayList;
 
 import org.json.JSONArray;
-import org.json.JSONObject;
 import org.restlet.data.Status;
 import org.restlet.ext.json.JsonRepresentation;
 import org.restlet.representation.Representation;
-import org.restlet.representation.StringRepresentation;
 import org.restlet.resource.Get;
-import org.restlet.resource.Post;
-
-import carpool.HttpServer.common.DebugLog;
-import carpool.HttpServer.configurations.EnumConfig;
 import carpool.HttpServer.dbservice.LetterDaoService;
 import carpool.HttpServer.exception.PseudoException;
-import carpool.HttpServer.exception.message.MessageNotFoundException;
-import carpool.HttpServer.exception.transaction.TransactionNotFoundException;
-import carpool.HttpServer.exception.user.UserNotFoundException;
 import carpool.HttpServer.factory.JSONFactory;
-import carpool.HttpServer.model.Letter;
 import carpool.HttpServer.model.User;
 import carpool.UserModule.resources.PseudoResource;
 

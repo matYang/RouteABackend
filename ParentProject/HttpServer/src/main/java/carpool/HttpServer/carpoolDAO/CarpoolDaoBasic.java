@@ -1,7 +1,6 @@
 package carpool.HttpServer.carpoolDAO;
 
 import java.sql.Connection;
-import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -38,12 +37,11 @@ public class CarpoolDaoBasic {
 		HikariConfig sqlConfig = new HikariConfig();
 		sqlConfig.setDataSourceClassName("com.mysql.jdbc.jdbc2.optional.MysqlDataSource");
 		sqlConfig.addDataSourceProperty("url", "jdbc:mysql://"+DatabaseConfig.jdbcUri);
-		sqlConfig.addDataSourceProperty("user", "db19r3708gdzx5d1");
+		sqlConfig.addDataSourceProperty("user", DatabaseConfig.sqlUser);
 		sqlConfig.addDataSourceProperty("password", DatabaseConfig.sqlPass);
 		sqlConfig.setPoolName("SQLPool");
 		sqlConfig.setMaxLifetime(1800000l);
 		sqlConfig.setAutoCommit(true);
-		sqlConfig.setMinimumPoolSize(10);
 		sqlConfig.setMaximumPoolSize(100);
 		sqlConfig.setConnectionTimeout(10000l);
 		ds = new HikariDataSource(sqlConfig);

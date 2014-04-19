@@ -1,19 +1,10 @@
 package carpool.HttpServer.configurations;
 
 import java.text.SimpleDateFormat;
-import java.util.AbstractMap;
-import java.util.Calendar;
-import java.util.HashMap;
 import java.util.Map;
-import java.util.Map.Entry;
 import java.util.concurrent.ConcurrentHashMap;
 
 import carpool.HttpServer.common.DateUtility;
-import carpool.HttpServer.common.DebugLog;
-import carpool.HttpServer.configurations.EnumConfig.DayTimeSlot;
-import carpool.HttpServer.configurations.EnumConfig.EmailEvent;
-import carpool.HttpServer.configurations.EnumConfig.MessageType;
-import carpool.HttpServer.model.Location;
 import carpool.HttpServer.model.representation.SearchRepresentation;
 
 public class ServerConfig {
@@ -35,6 +26,7 @@ public class ServerConfig {
 			configurationMap.put("domainName", "localhost:8015");
 			configurationMap.put("redisSearchHistoryUpbound", "6");
 			configurationMap.put("sqlPass", "LIFECENTRICo2o");
+			configurationMap.put("sqlUser", "test");
 		} 
 		else if (value.equals(ENV_TEST)){
 			//test env
@@ -44,6 +36,7 @@ public class ServerConfig {
 			configurationMap.put("domainName", "www.routea.ca");
 			configurationMap.put("redisSearchHistoryUpbound", "50");
 			configurationMap.put("sqlPass", "badstudent");
+			configurationMap.put("sqlUser", "test");
 		}
 		else{
 			//prod env
@@ -53,6 +46,7 @@ public class ServerConfig {
 			configurationMap.put("domainName", "www.routea.ca");
 			configurationMap.put("redisSearchHistoryUpbound", "50");
 			configurationMap.put("sqlPass", "LIFECENTRICo2o");
+			configurationMap.put("sqlUser", "db19r3708gdzx5d1");
 		}
 		
 	}

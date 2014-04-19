@@ -3,11 +3,8 @@ package carpool.HttpServer.locationService;
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
-import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.LinkedHashMap;
-
 import carpool.HttpServer.common.DebugLog;
 import carpool.HttpServer.exception.location.LocationException;
 import carpool.HttpServer.exception.validation.ValidationException;

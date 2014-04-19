@@ -1,20 +1,13 @@
 package carpool.UserModule.resources.userResource;
 
-import java.util.ArrayList;
-
-import org.json.JSONArray;
 import org.json.JSONObject;
-import org.restlet.data.Status;
 import org.restlet.ext.json.JsonRepresentation;
 import org.restlet.representation.Representation;
-import org.restlet.representation.StringRepresentation;
 import org.restlet.resource.Get;
 
-import carpool.HttpServer.common.DebugLog;
 import carpool.HttpServer.dbservice.UserDaoService;
 import carpool.HttpServer.exception.PseudoException;
 import carpool.HttpServer.factory.JSONFactory;
-import carpool.HttpServer.model.User;
 import carpool.UserModule.resources.PseudoResource;
 
 public class UserIsWatchedResource extends PseudoResource{

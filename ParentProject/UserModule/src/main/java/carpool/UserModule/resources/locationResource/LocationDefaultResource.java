@@ -7,11 +7,8 @@ import org.restlet.ext.json.JsonRepresentation;
 import org.restlet.representation.Representation;
 import org.restlet.resource.Get;
 
-import carpool.HttpServer.common.DebugLog;
 import carpool.HttpServer.dbservice.LocationDaoService;
-import carpool.HttpServer.exception.PseudoException;
 import carpool.HttpServer.factory.JSONFactory;
-import carpool.HttpServer.model.Location;
 import carpool.HttpServer.model.representation.DefaultLocationRepresentation;
 import carpool.UserModule.resources.PseudoResource;
 

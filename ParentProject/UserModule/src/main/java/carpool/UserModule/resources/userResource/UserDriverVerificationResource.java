@@ -65,7 +65,7 @@ public class UserDriverVerificationResource extends PseudoResource{
             ImageIO.write(bufferedImage, "png", imgFile);
             
             //warning: can only call this upload once, as it will delete the image file before it exits
-            String path = FileService.uploadUserProfileImg(id, imgFile, imgName);
+            String path = FileService.uploadDriverVerificationLicenseImg(id, imgFile, imgName);
             DebugLog.d("img uploaded, retriving user");
             User user = UserDaoService.getUserById(id);
             user.setImgPath(path);

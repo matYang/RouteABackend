@@ -2,20 +2,14 @@ package carpool.UserModule.resources.userResource;
 
 import java.util.ArrayList;
 
-import org.restlet.engine.header.Header;
 import org.restlet.ext.json.JsonRepresentation;
 import org.restlet.representation.Representation;
-import org.restlet.representation.StringRepresentation;
 import org.restlet.resource.*;
-import org.restlet.util.Series;
 import org.restlet.data.*;
 
 import org.json.JSONArray;
-import org.json.JSONException;
 import org.json.JSONObject;
 
-import carpool.HttpServer.common.DebugLog;
-import carpool.HttpServer.configurations.EnumConfig;
 import carpool.HttpServer.dbservice.*;
 import carpool.HttpServer.exception.PseudoException;
 import carpool.HttpServer.exception.validation.ValidationException;

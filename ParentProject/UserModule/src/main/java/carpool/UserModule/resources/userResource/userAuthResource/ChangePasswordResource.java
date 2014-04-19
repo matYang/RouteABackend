@@ -2,7 +2,6 @@ package carpool.UserModule.resources.userResource.userAuthResource;
 
 import org.restlet.ext.json.JsonRepresentation;
 import org.restlet.representation.Representation;
-import org.restlet.representation.StringRepresentation;
 import org.restlet.resource.*;
 import org.restlet.data.Status;
 import org.json.JSONObject;
@@ -10,7 +9,6 @@ import org.json.JSONObject;
 import carpool.HttpServer.common.Validator;
 import carpool.HttpServer.dbservice.*;
 import carpool.HttpServer.exception.PseudoException;
-import carpool.HttpServer.model.*;
 import carpool.UserModule.resources.PseudoResource;
 
 

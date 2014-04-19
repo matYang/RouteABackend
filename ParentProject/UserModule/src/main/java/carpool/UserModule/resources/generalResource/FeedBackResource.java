@@ -3,19 +3,14 @@ package carpool.UserModule.resources.generalResource;
 import java.io.BufferedWriter;
 import java.io.FileWriter;
 import java.io.IOException;
-import java.io.UnsupportedEncodingException;
-
 import org.restlet.ext.json.JsonRepresentation;
 import org.restlet.representation.Representation;
 import org.restlet.resource.*;
-import org.restlet.util.Series;
-import org.restlet.engine.header.Header;
 import org.restlet.data.Status;
 
 import carpool.HttpServer.common.DebugLog;
 import carpool.HttpServer.configurations.ValidationConfig;
 import carpool.UserModule.resources.PseudoResource;
-import carpool.UserModule.resources.userResource.UserResource;
 
 
 public class FeedBackResource extends PseudoResource{

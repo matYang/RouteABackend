@@ -1,11 +1,7 @@
 package carpool.HttpServer.model;
 
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
-import java.util.Date;
-import java.util.List;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -13,7 +9,6 @@ import carpool.HttpServer.common.DateUtility;
 import carpool.HttpServer.common.HelperOperator;
 import carpool.HttpServer.configurations.ServerConfig;
 import carpool.HttpServer.configurations.EnumConfig.DayTimeSlot;
-import carpool.HttpServer.configurations.EnumConfig.MessageState;
 import carpool.HttpServer.configurations.EnumConfig.PaymentMethod;
 import carpool.HttpServer.configurations.EnumConfig.TransactionState;
 import carpool.HttpServer.configurations.EnumConfig.TransactionType;

@@ -1,6 +1,5 @@
 package carpool.HttpServer.interfaces;
 
-import java.sql.SQLException;
 import java.util.ArrayList;
 
 import carpool.HttpServer.exception.PseudoException;

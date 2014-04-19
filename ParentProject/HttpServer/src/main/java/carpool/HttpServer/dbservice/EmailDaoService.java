@@ -1,11 +1,7 @@
 package carpool.HttpServer.dbservice;
 
-import org.apache.commons.lang3.RandomStringUtils;
-
 import carpool.HttpServer.asyncRelayExecutor.ExecutorProvider;
-import carpool.HttpServer.asyncTask.relayTask.EmailRelayTask;
 import carpool.HttpServer.asyncTask.relayTask.SESRelayTask;
-import carpool.HttpServer.common.DateUtility;
 import carpool.HttpServer.common.DebugLog;
 import carpool.HttpServer.configurations.ServerConfig;
 import carpool.HttpServer.configurations.EnumConfig.EmailEvent;

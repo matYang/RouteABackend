@@ -1,6 +1,5 @@
 package carpool.AdminModule.resources;
 
-import java.io.IOException;
 import java.io.UnsupportedEncodingException;
 import java.util.ArrayList;
 
@@ -22,7 +21,6 @@ import carpool.HttpServer.dbservice.AuthDaoService;
 import carpool.HttpServer.encryption.SessionCrypto;
 import carpool.HttpServer.exception.PseudoException;
 import carpool.HttpServer.exception.auth.AccountAuthenticationException;
-import carpool.HttpServer.exception.auth.DuplicateSessionCookieException;
 import carpool.HttpServer.exception.auth.SessionEncodingException;
 import carpool.HttpServer.exception.validation.EntityTooLargeException;
 import carpool.HttpServer.factory.JSONFactory;

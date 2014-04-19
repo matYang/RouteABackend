@@ -5,8 +5,6 @@ import java.util.ArrayList;
 import org.restlet.ext.json.JsonRepresentation;
 import org.restlet.representation.Representation;
 import org.restlet.resource.*;
-import org.restlet.util.Series;
-import org.restlet.engine.header.Header;
 import org.restlet.data.Status;
 
 import org.json.JSONArray;
@@ -19,7 +17,6 @@ import carpool.HttpServer.exception.user.UserNotFoundException;
 import carpool.HttpServer.factory.JSONFactory;
 import carpool.HttpServer.model.*;
 import carpool.UserModule.resources.PseudoResource;
-import carpool.UserModule.resources.userResource.UserResource;
 
 
 public class NotificationResource extends PseudoResource{

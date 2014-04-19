@@ -4,10 +4,7 @@ import java.util.ArrayList;
 
 import carpool.HttpServer.asyncRelayExecutor.ExecutorProvider;
 import carpool.HttpServer.asyncTask.StoreSearchHistoryTask;
-import carpool.HttpServer.aws.AwsMain;
 import carpool.HttpServer.carpoolDAO.*;
-import carpool.HttpServer.common.DateUtility;
-import carpool.HttpServer.common.DebugLog;
 import carpool.HttpServer.configurations.*;
 import carpool.HttpServer.configurations.EnumConfig.MessageState;
 import carpool.HttpServer.exception.PseudoException;
@@ -18,11 +15,8 @@ import carpool.HttpServer.exception.location.LocationNotFoundException;
 import carpool.HttpServer.exception.message.MessageNotFoundException;
 import carpool.HttpServer.exception.message.MessageOwnerNotMatchException;
 import carpool.HttpServer.exception.user.UserNotFoundException;
-import carpool.HttpServer.exception.validation.ValidationException;
 import carpool.HttpServer.model.Message;
-import carpool.HttpServer.model.Notification;
 import carpool.HttpServer.model.Transaction;
-import carpool.HttpServer.model.User;
 import carpool.HttpServer.model.representation.SearchRepresentation;
 
 

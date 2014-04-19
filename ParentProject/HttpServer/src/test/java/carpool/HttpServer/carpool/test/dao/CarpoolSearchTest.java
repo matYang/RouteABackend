@@ -12,7 +12,6 @@ import carpool.HttpServer.carpoolDAO.CarpoolDaoMessage;
 import carpool.HttpServer.carpoolDAO.CarpoolDaoUser;
 import carpool.HttpServer.common.DateUtility;
 import carpool.HttpServer.common.DebugLog;
-import carpool.HttpServer.configurations.ServerConfig;
 import carpool.HttpServer.configurations.EnumConfig.DayTimeSlot;
 import carpool.HttpServer.configurations.EnumConfig.Gender;
 import carpool.HttpServer.configurations.EnumConfig.MessageState;

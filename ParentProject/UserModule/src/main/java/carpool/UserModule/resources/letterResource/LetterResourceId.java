@@ -7,22 +7,16 @@ import org.json.JSONObject;
 import org.restlet.data.Status;
 import org.restlet.ext.json.JsonRepresentation;
 import org.restlet.representation.Representation;
-import org.restlet.representation.StringRepresentation;
 import org.restlet.resource.Delete;
 import org.restlet.resource.Get;
 import org.restlet.resource.Put;
 
 import carpool.HttpServer.configurations.EnumConfig.LetterDirection;
 import carpool.HttpServer.configurations.EnumConfig.LetterType;
-import carpool.HttpServer.configurations.EnumConfig.TransactionStateChangeAction;
 import carpool.HttpServer.dbservice.LetterDaoService;
-import carpool.HttpServer.dbservice.MessageDaoService;
-import carpool.HttpServer.dbservice.TransactionDaoService;
 import carpool.HttpServer.exception.PseudoException;
 import carpool.HttpServer.factory.JSONFactory;
 import carpool.HttpServer.model.Letter;
-import carpool.HttpServer.model.Message;
-import carpool.HttpServer.model.Transaction;
 import carpool.UserModule.resources.PseudoResource;
 
 public class LetterResourceId extends PseudoResource{

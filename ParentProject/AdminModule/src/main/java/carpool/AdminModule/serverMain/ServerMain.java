@@ -1,18 +1,12 @@
 package carpool.AdminModule.serverMain;
 
-import java.util.ArrayList;
-
-import org.json.JSONObject;
 import org.restlet.Component;
 import org.restlet.Server;
 import org.restlet.data.Protocol;
 
 import carpool.AdminModule.service.RoutingService;
 import carpool.HttpServer.common.DebugLog;
-import carpool.HttpServer.configurations.ServerConfig;
-import carpool.HttpServer.configurations.EnumConfig.Gender;
 import carpool.HttpServer.dbservice.LocationDaoService;
-import carpool.HttpServer.factory.JSONFactory;
 
 
 

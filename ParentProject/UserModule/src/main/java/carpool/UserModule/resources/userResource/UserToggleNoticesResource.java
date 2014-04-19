@@ -3,7 +3,6 @@ package carpool.UserModule.resources.userResource;
 
 import org.restlet.ext.json.JsonRepresentation;
 import org.restlet.representation.Representation;
-import org.restlet.representation.StringRepresentation;
 import org.restlet.resource.*;
 import org.restlet.data.Status;
 

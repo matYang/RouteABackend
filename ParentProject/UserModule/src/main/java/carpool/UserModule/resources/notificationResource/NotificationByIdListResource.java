@@ -4,11 +4,9 @@ import java.util.ArrayList;
 
 import org.restlet.ext.json.JsonRepresentation;
 import org.restlet.representation.Representation;
-import org.restlet.representation.StringRepresentation;
 import org.restlet.resource.*;
 import org.restlet.data.*;
 
-import org.json.JSONArray;
 import org.json.JSONObject;
 
 import carpool.HttpServer.common.DebugLog;
@@ -16,8 +14,6 @@ import carpool.HttpServer.common.Parser;
 import carpool.HttpServer.configurations.EnumConfig.NotificationStateChangeActon;
 import carpool.HttpServer.dbservice.*;
 import carpool.HttpServer.exception.PseudoException;
-import carpool.HttpServer.factory.JSONFactory;
-import carpool.HttpServer.model.*;
 import carpool.UserModule.resources.PseudoResource;
 
 

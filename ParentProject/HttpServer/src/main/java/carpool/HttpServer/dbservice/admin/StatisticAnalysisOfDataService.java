@@ -3,25 +3,21 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.Calendar;
-import java.util.Collections;
-import java.util.Comparator;
 import java.util.HashMap;
 import java.util.Map.Entry;
-import java.util.Set;
-import carpool.HttpServer.aws.AwsMain;
 import carpool.HttpServer.carpoolDAO.CarpoolDaoBasic;
 import carpool.HttpServer.common.DateUtility;
 import carpool.HttpServer.common.DebugLog;
 import carpool.HttpServer.configurations.DatabaseConfig;
+import carpool.HttpServer.dbservice.FileService;
 import carpool.HttpServer.model.representation.SearchRepresentation;
 
 public class StatisticAnalysisOfDataService {	
 
 	public static HashMap<String,ArrayList<Entry<Long,Integer>>> GetTheEntireMap(){
-		HashMap<String,HashMap> BigMap = new HashMap<String,HashMap>();
+		HashMap<String,HashMap<Long,Integer>> BigMap = new HashMap<String,HashMap<Long,Integer>>();
 		HashMap<Long,Integer> UserSRDeparture = new HashMap<Long,Integer>();
 		HashMap<Long,Integer> UserSRArrival = new HashMap<Long,Integer>();
 		HashMap<Long,Integer> DatabasesDeparture = new HashMap<Long,Integer>();
@@ -52,7 +48,7 @@ public class StatisticAnalysisOfDataService {
 		}
 		ArrayList<SearchRepresentation> srlist = new ArrayList<SearchRepresentation>();
 		while(total>0){
-			srlist = AwsMain.getUserSearchHistory(total);
+			srlist = FileService.getUserSearchHistory(total);
 			setUserSR(BigMap,srlist,"both");
 			total--;
 		}
@@ -88,7 +84,7 @@ public class StatisticAnalysisOfDataService {
 	}
 
 	public static ArrayList<Entry<Long,Integer>> getSpecificList(String str){
-		HashMap<String,HashMap> BigMap = new HashMap<String,HashMap>();
+		HashMap<String,HashMap<Long,Integer>> BigMap = new HashMap<String,HashMap<Long,Integer>>();
 		HashMap<Long,Integer> UserSRDeparture = new HashMap<Long,Integer>();
 		HashMap<Long,Integer> UserSRArrival = new HashMap<Long,Integer>();
 		HashMap<Long,Integer> DatabasesDeparture = new HashMap<Long,Integer>();
@@ -121,7 +117,7 @@ public class StatisticAnalysisOfDataService {
 			}
 			ArrayList<SearchRepresentation> srlist = new ArrayList<SearchRepresentation>();
 			while(total>0){
-				srlist = AwsMain.getUserSearchHistory(total);
+				srlist = FileService.getUserSearchHistory(total);
 				setUserSR(BigMap,srlist,str.equals(DatabaseConfig.UserSRDeparture) ? "departure" : "arrival");
 				total--;
 			}
@@ -165,7 +161,7 @@ public class StatisticAnalysisOfDataService {
 
 
 
-	public static void setUserSR(HashMap<String,HashMap> map,ArrayList<SearchRepresentation> srlist,String waydirection){			
+	public static void setUserSR(HashMap<String,HashMap<Long,Integer>> map,ArrayList<SearchRepresentation> srlist,String waydirection){			
 		if(waydirection.equals("departure")){		
 			for(int i=0; i<srlist.size(); i++){
 				if(map.get(DatabaseConfig.UserSRDeparture).get(srlist.get(i).getDepartureMatch_Id())==null){
@@ -208,7 +204,7 @@ public class StatisticAnalysisOfDataService {
 
 	}
 
-	public static void setMessagePost(HashMap<String,HashMap> map,Long departureId, Long arrivalId, String waydirection){
+	public static void setMessagePost(HashMap<String,HashMap<Long,Integer>> map,Long departureId, Long arrivalId, String waydirection){
 		if(waydirection.equals("departure")){
 			if(map.get(DatabaseConfig.DatabasesDeparture).get(departureId)==null){
 				map.get(DatabaseConfig.DatabasesDeparture).put(departureId, 1);
@@ -292,7 +288,7 @@ public class StatisticAnalysisOfDataService {
 		ArrayList<SearchRepresentation> srlist = new ArrayList<SearchRepresentation>();
 		ArrayList<SearchRepresentation> finallist = new ArrayList<SearchRepresentation>();
 		while(total>0){
-			srlist = AwsMain.getUserSearchHistory(total);
+			srlist = FileService.getUserSearchHistory(total);
 			for(int i=0; i<srlist.size(); i++){
 				if(qualifiedSR(srlist.get(i),low,high)){
 					finallist.add(srlist.get(i));

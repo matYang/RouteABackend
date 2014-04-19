@@ -2,11 +2,7 @@ package carpool.HttpServer.model;
 
 import java.math.BigDecimal;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.Calendar;
-import java.util.Date;
-
-import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
@@ -17,7 +13,6 @@ import carpool.HttpServer.configurations.ImageConfig;
 import carpool.HttpServer.configurations.ServerConfig;
 import carpool.HttpServer.configurations.EnumConfig;
 import carpool.HttpServer.configurations.EnumConfig.Gender;
-import carpool.HttpServer.configurations.EnumConfig.UserSearchState;
 import carpool.HttpServer.configurations.EnumConfig.UserState;
 import carpool.HttpServer.exception.validation.ValidationException;
 import carpool.HttpServer.factory.JSONFactory;

@@ -2,25 +2,13 @@ package carpool.HttpServer.carpool.test.dao;
 
 import static org.junit.Assert.fail;
 
-import java.io.UnsupportedEncodingException;
-import java.security.InvalidAlgorithmParameterException;
-import java.security.InvalidKeyException;
-import java.security.NoSuchAlgorithmException;
 import java.sql.Connection;
 import java.sql.Date;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
-import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.Calendar;
-import java.util.Random;
-
-import javax.crypto.BadPaddingException;
-import javax.crypto.IllegalBlockSizeException;
-import javax.crypto.NoSuchPaddingException;
-import javax.crypto.ShortBufferException;
-
 import org.junit.Test;
 
 import com.zaxxer.hikari.HikariConfig;
@@ -30,9 +18,6 @@ import carpool.HttpServer.carpoolDAO.CarpoolDaoBasic;
 import carpool.HttpServer.carpoolDAO.CarpoolDaoMessage;
 import carpool.HttpServer.carpoolDAO.CarpoolDaoUser;
 import carpool.HttpServer.common.DateUtility;
-import carpool.HttpServer.common.DebugLog;
-import carpool.HttpServer.common.HelperOperator;
-import carpool.HttpServer.common.Parser;
 import carpool.HttpServer.configurations.DatabaseConfig;
 import carpool.HttpServer.configurations.EnumConfig;
 import carpool.HttpServer.configurations.EnumConfig.DayTimeSlot;
@@ -40,20 +25,15 @@ import carpool.HttpServer.configurations.EnumConfig.Gender;
 import carpool.HttpServer.configurations.EnumConfig.MessageState;
 import carpool.HttpServer.configurations.EnumConfig.MessageType;
 import carpool.HttpServer.configurations.EnumConfig.PaymentMethod;
-import carpool.HttpServer.dbservice.*;
-
 import carpool.HttpServer.encryption.SessionCrypto;
 import carpool.HttpServer.exception.validation.ValidationException;
 import carpool.HttpServer.exception.location.LocationNotFoundException;
 
-import carpool.HttpServer.exception.message.MessageNotFoundException;
 import carpool.HttpServer.exception.user.UserNotFoundException;
-import carpool.HttpServer.exception.validation.ValidationException;
 import carpool.HttpServer.model.representation.UserSearchRepresentation;
 import carpool.HttpServer.model.Location;
 import carpool.HttpServer.model.Message;
 import carpool.HttpServer.model.User;
-import static java.lang.System.out;
 
 public class CarpoolUserTest {
 	

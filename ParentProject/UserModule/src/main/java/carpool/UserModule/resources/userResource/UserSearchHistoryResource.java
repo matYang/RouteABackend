@@ -5,7 +5,7 @@ import org.json.JSONArray;
 import org.restlet.ext.json.JsonRepresentation;
 import org.restlet.representation.Representation;
 import org.restlet.resource.Get;
-import carpool.HttpServer.aws.*;
+import carpool.HttpServer.dbservice.FileService;
 import carpool.HttpServer.factory.JSONFactory;
 import carpool.HttpServer.model.representation.SearchRepresentation;
 import carpool.UserModule.resources.PseudoResource;
@@ -19,7 +19,7 @@ public class UserSearchHistoryResource extends PseudoResource{
 		JSONArray resultArr = new JSONArray();		
 		try{
 			userId = Integer.parseInt(this.getAttribute("id"));			
-			searchHistory = AwsMain.getUserSearchHistory(userId);
+			searchHistory = FileService.getUserSearchHistory(userId);
 			resultArr = JSONFactory.toJSON(searchHistory);
 
 		}  catch (Exception e) {

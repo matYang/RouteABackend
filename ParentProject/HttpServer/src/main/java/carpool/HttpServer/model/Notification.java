@@ -7,7 +7,6 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import carpool.HttpServer.common.DateUtility;
-import carpool.HttpServer.common.HelperOperator;
 import carpool.HttpServer.configurations.EnumConfig.NotificationEvent;
 import carpool.HttpServer.configurations.EnumConfig.NotificationState;
 import carpool.HttpServer.exception.validation.ValidationException;

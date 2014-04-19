@@ -5,7 +5,6 @@ import java.util.ArrayList;
 import java.util.Calendar;
 
 import carpool.HttpServer.carpoolDAO.CarpoolDaoBasic;
-import carpool.HttpServer.carpoolDAO.CarpoolDaoMessage;
 import carpool.HttpServer.carpoolDAO.CarpoolDaoTransaction;
 import carpool.HttpServer.common.DateUtility;
 import carpool.HttpServer.common.DebugLog;
@@ -16,7 +15,6 @@ import carpool.HttpServer.exception.location.LocationNotFoundException;
 import carpool.HttpServer.exception.message.MessageNotFoundException;
 import carpool.HttpServer.exception.transaction.TransactionNotFoundException;
 import carpool.HttpServer.exception.user.UserNotFoundException;
-import carpool.HttpServer.model.Message;
 import carpool.HttpServer.model.Notification;
 import carpool.HttpServer.model.Transaction;
 

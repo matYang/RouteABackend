@@ -1,6 +1,5 @@
 package carpool.HttpServer.SRStorageTest;
 
-import java.util.ArrayList;
 import java.util.Calendar;
 
 import org.junit.Test;
@@ -12,9 +11,7 @@ import carpool.HttpServer.carpoolDAO.CarpoolDaoUser;
 import carpool.HttpServer.common.DateUtility;
 import carpool.HttpServer.configurations.EnumConfig.DayTimeSlot;
 import carpool.HttpServer.configurations.EnumConfig.Gender;
-import carpool.HttpServer.configurations.EnumConfig.MessageState;
 import carpool.HttpServer.configurations.EnumConfig.MessageType;
-import carpool.HttpServer.configurations.EnumConfig.PaymentMethod;
 import carpool.HttpServer.exception.validation.ValidationException;
 import carpool.HttpServer.model.Location;
 import carpool.HttpServer.model.User;

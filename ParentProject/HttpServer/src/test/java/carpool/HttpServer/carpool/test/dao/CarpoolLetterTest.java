@@ -10,7 +10,7 @@ import org.junit.Test;
 import carpool.HttpServer.carpoolDAO.CarpoolDaoBasic;
 import carpool.HttpServer.carpoolDAO.CarpoolDaoLetter;
 import carpool.HttpServer.carpoolDAO.CarpoolDaoUser;
-import carpool.HttpServer.common.DebugLog;
+import carpool.HttpServer.common.DateUtility;
 import carpool.HttpServer.configurations.EnumConfig;
 import carpool.HttpServer.configurations.EnumConfig.Gender;
 import carpool.HttpServer.configurations.EnumConfig.LetterState;
@@ -790,7 +790,7 @@ public class CarpoolLetterTest {
 			e.printStackTrace();
 		}
 
-		Calendar dt = Calendar.getInstance();
+		Calendar dt = DateUtility.getCurTimeInstance();
 		Calendar at = (Calendar) dt.clone();
 		at.add(Calendar.DAY_OF_YEAR, 1);
 		Calendar dt2 = (Calendar) dt.clone();

@@ -4,10 +4,7 @@ import java.sql.Connection;
 import java.util.*;
 import java.util.Map.Entry;
 
-import javax.swing.text.DateFormatter;
-
 import carpool.HttpServer.asyncRelayExecutor.ExecutorProvider;
-import carpool.HttpServer.asyncTask.relayTask.EmailRelayTask;
 import carpool.HttpServer.asyncTask.relayTask.NotificationRelayTask;
 import carpool.HttpServer.asyncTask.relayTask.SESRelayTask;
 import carpool.HttpServer.carpoolDAO.CarpoolDaoNotification;
@@ -15,7 +12,6 @@ import carpool.HttpServer.common.*;
 import carpool.HttpServer.configurations.EnumConfig.EmailEvent;
 import carpool.HttpServer.configurations.EnumConfig.NotificationState;
 import carpool.HttpServer.configurations.EnumConfig.NotificationStateChangeActon;
-import carpool.HttpServer.exception.PseudoException;
 import carpool.HttpServer.exception.location.LocationNotFoundException;
 import carpool.HttpServer.exception.message.MessageNotFoundException;
 import carpool.HttpServer.exception.notification.NotificationNotFoundException;

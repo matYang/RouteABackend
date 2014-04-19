@@ -1,15 +1,8 @@
 package carpool.HttpServer.dbservice;
 
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.HashMap;
-import java.util.Map.Entry;
-
-import org.json.JSONObject;
-
-import carpool.HttpServer.carpoolDAO.CarpoolDaoBasic;
 import carpool.HttpServer.carpoolDAO.CarpoolDaoLocation;
-import carpool.HttpServer.configurations.ServerConfig;
 import carpool.HttpServer.exception.location.LocationException;
 import carpool.HttpServer.exception.location.LocationNotFoundException;
 import carpool.HttpServer.exception.validation.ValidationException;
