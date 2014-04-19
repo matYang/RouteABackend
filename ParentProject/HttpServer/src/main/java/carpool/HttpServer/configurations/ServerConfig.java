@@ -19,7 +19,7 @@ public class ServerConfig {
 	static{
 		String value = System.getenv(ENV_VAR_KEY);
 		System.out.println("Server starting under " + value + " envrionment");
-		if (value == null || !value.equals(ENV_TEST) || !value.equals(ENV_PROD)){
+		if (value == null || (!value.equals(ENV_TEST) && !value.equals(ENV_PROD))){
 			//local env
 			configurationMap.put("env", "local");
 			configurationMap.put("jdbcUri", "badstudent.mysql.rds.aliyuncs.com:3306/db19r3708gdzx5d1?allowMultiQueries=true&&characterSetResults=UTF-8&characterEncoding=UTF-8&useUnicode=yes");

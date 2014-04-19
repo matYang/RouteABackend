@@ -34,9 +34,6 @@ public class CarpoolDaoBasic {
 		jedisConfig.setMaxWait(4000l);
 		jedisPool = new JedisPool(jedisConfig, DatabaseConfig.redisUri, 6379);
 		
-		System.out.println("Configing database, currently under " + ServerConfig.configurationMap.get("env") + " environment");
-		System.out.println("SQL User: " + DatabaseConfig.sqlUser);
-		System.out.println("SQL Pass: " + DatabaseConfig.sqlPass);
 		
 		HikariConfig sqlConfig = new HikariConfig();
 		sqlConfig.setDataSourceClassName("com.mysql.jdbc.jdbc2.optional.MysqlDataSource");
@@ -66,9 +63,6 @@ public class CarpoolDaoBasic {
     }
     public static Connection getSQLConnection(){
     	Connection connection;
-    	System.out.println("Trying to access database, currently under " + ServerConfig.configurationMap.get("env") + " environment");
-    	System.out.println("SQL User: " + DatabaseConfig.sqlUser);
-    	System.out.println("SQL Pass: " + DatabaseConfig.sqlPass);
     	try {
 			connection = ds.getConnection();
 		} catch (SQLException e) {
