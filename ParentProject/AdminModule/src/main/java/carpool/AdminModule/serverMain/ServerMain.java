@@ -34,8 +34,8 @@ public class ServerMain {
 
 		// Add a new HTTP server listening on port
 
-		Server server = component.getServers().add(Protocol.HTTP, 8015);
-		server.getContext().getParameters().add("maxThreads", "256");
+		Server server = component.getServers().add(Protocol.HTTP, 8016);
+		server.getContext().getParameters().add("maxThreads", "64");
 
 		// Attach the sample application
 		RoutingService routingService = new RoutingService();
@@ -43,7 +43,6 @@ public class ServerMain {
 		component.getDefaultHost().attach(routingService);
 
 		// Start the component.
-		//log.info("ready to start");
 		DebugLog.d("ready to start");
 		component.start();
 
