@@ -18,6 +18,7 @@ public class ServerConfig {
 	
 	static{
 		String value = System.getenv(ENV_VAR_KEY);
+		System.out.println("Server starting under " + value + " envrionment");
 		if (value == null || !value.equals(ENV_TEST) || !value.equals(ENV_PROD)){
 			//local env
 			configurationMap.put("env", "local");
