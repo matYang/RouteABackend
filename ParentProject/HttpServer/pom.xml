@@ -292,6 +292,12 @@
 			<artifactId>aws-java-sdk</artifactId>
 			<version>1.6.3</version>
 		</dependency>
+		<!-- ALIYUN dependencies -->
+		<dependency>
+			<groupId>com.aliyun.openservices</groupId>
+			<artifactId>aliyun-openservices</artifactId>
+			<version>1.0.10</version>
+		</dependency>
 		<!-- Local Dependency -->
 		<dependency>
 			<groupId>com.amazonaws</groupId>

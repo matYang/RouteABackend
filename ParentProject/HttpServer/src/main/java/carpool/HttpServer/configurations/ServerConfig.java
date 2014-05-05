@@ -27,14 +27,15 @@ public class ServerConfig {
 	
 	static{
 		String value = System.getenv(ENV_VAR_KEY);
+		value = null;
 		if (value == null || !value.equals(ENV_TEST) || !value.equals(ENV_PROD)){
 			//local env
-			configurationMap.put("env", "local");
-			configurationMap.put("jdbcUri", "badstudent.mysql.rds.aliyuncs.com:3306/db19r3708gdzx5d1?allowMultiQueries=true&&characterSetResults=UTF-8&characterEncoding=UTF-8&useUnicode=yes");
+			configurationMap.put("env", "local");			
+			configurationMap.put("jdbcUri", "localhost:3306/test?allowMultiQueries=true&&characterSetResults=UTF-8&characterEncoding=UTF-8&useUnicode=yes");
 			configurationMap.put("redisUri", "localhost");
 			configurationMap.put("domainName", "localhost:8015");
 			configurationMap.put("redisSearchHistoryUpbound", "6");
-			configurationMap.put("sqlPass", "LIFECENTRICo2o");
+			configurationMap.put("sqlPass", "");
 		} 
 		else if (value.equals(ENV_TEST)){
 			//test env
@@ -95,9 +96,13 @@ public class ServerConfig {
 	/* AWS Bucket*/
 	public static final String ProfileBucket = "Badstudent";
 	public static final String DriverVerificationBucket = "DriverVerification";
-	public static final String PassengerVerificationBucket = "PassengerVerification";
+	public static final String PassengerVerificationBucket = "PassengerVerification";	
 	
-	/* */
-	
+	/* ALIYUN Bucket*/
+	public static final String AliyunAccessKeyID = "UBnwEnaFUdBewFF9";
+	public static final String AliyunAccessKeySecrete = "L8hyNuKRXo5bfQ9HWURDq0bprDSDYO";
+	public static final String AliyunProfileBucket = "badstudent-aliyun";
+	public static final String AliyunDriverVerificationBucket = "driververification";
+	public static final String AliyunPassengerVerificationBucket = "passengerverification";
 	
 }
