@@ -28,8 +28,8 @@ public class ServerConfig {
 			configurationMap.put("redisUri", "localhost");
 			configurationMap.put("domainName", "localhost:8015");
 			configurationMap.put("redisSearchHistoryUpbound", "6");
-			configurationMap.put("sqlPass", "LIFECENTRICo2o");
-			configurationMap.put("sqlUser", "test");
+			configurationMap.put("sqlPass", "");
+			configurationMap.put("sqlUser", "root");
 
 		} 
 		else if (value.equals(ENV_TEST)){

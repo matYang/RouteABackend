@@ -42,7 +42,7 @@ public class AliyunS3Test {
 
 	@Test
 	public void testUploadImg() throws IOException{
-		//CarpoolDaoBasic.clearBothDatabase();
+		CarpoolDaoBasic.clearBothDatabase();
 		int userId = 1;
 		String userProfile = ImageConfig.profileImgPrefix;
 		String imgSize = ImageConfig.imgSize_m;
