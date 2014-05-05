@@ -1,58 +1,27 @@
 package carpool.UserModule.resources.userResource;
 
 import java.io.File;
-import java.io.FileNotFoundException;
-import java.io.FileOutputStream;
-import java.io.IOException;
-import java.io.InputStream;
-import java.io.UnsupportedEncodingException;
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
-import java.util.ArrayList;
-import java.util.Calendar;
-import java.util.Date;
 import java.util.List;
-import java.util.Random;
-
 import org.restlet.ext.fileupload.RestletFileUpload;
 import org.restlet.ext.json.JsonRepresentation;
-import org.restlet.representation.FileRepresentation;
-import org.restlet.representation.Representation;
-import org.restlet.representation.StringRepresentation;
 import org.restlet.representation.Representation;
 import org.restlet.resource.*;
-import org.restlet.util.Series;
-import org.restlet.engine.header.Header;
 import org.restlet.data.MediaType;
 import org.restlet.data.Status;
 
-import org.json.JSONArray;
-import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.awt.image.BufferedImage;
-import java.io.File;
 import javax.imageio.ImageIO;
-import java.io.ByteArrayOutputStream;
-
 import org.apache.commons.fileupload.FileItem;
-import org.apache.commons.fileupload.FileItemIterator;
-import org.apache.commons.fileupload.FileItemStream;
 import org.apache.commons.fileupload.disk.DiskFileItemFactory;
 import org.imgscalr.Scalr;
 
 import carpool.HttpServer.common.DebugLog;
-import carpool.HttpServer.common.HelperOperator;
 import carpool.HttpServer.configurations.ImageConfig;
 import carpool.HttpServer.configurations.ServerConfig;
-import carpool.HttpServer.configurations.EnumConfig;
 import carpool.HttpServer.dbservice.*;
-import carpool.HttpServer.encryption.ImgCrypto;
 import carpool.HttpServer.exception.PseudoException;
-import carpool.HttpServer.exception.auth.DuplicateSessionCookieException;
-import carpool.HttpServer.exception.auth.SessionEncodingException;
-import carpool.HttpServer.exception.user.UserNotFoundException;
-import carpool.HttpServer.exception.validation.ValidationException;
 import carpool.HttpServer.factory.JSONFactory;
 import carpool.HttpServer.model.*;
 import carpool.UserModule.resources.PseudoResource;

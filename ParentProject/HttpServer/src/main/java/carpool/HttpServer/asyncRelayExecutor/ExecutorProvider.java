@@ -4,7 +4,6 @@ import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
 import carpool.HttpServer.asyncTask.StoreSearchHistoryTask;
-import carpool.HttpServer.asyncTask.relayTask.EmailRelayTask;
 import carpool.HttpServer.asyncTask.relayTask.LetterRelayTask;
 import carpool.HttpServer.asyncTask.relayTask.NotificationRelayTask;
 import carpool.HttpServer.asyncTask.relayTask.SESRelayTask;

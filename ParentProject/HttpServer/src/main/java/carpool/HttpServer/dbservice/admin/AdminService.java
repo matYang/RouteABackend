@@ -6,14 +6,13 @@ import java.util.Calendar;
 import carpool.HttpServer.carpoolDAO.*;
 import carpool.HttpServer.cleanRoutineTask.MessageCleaner;
 import carpool.HttpServer.cleanRoutineTask.TransactionCleaner;
+import carpool.HttpServer.common.DateUtility;
 import carpool.HttpServer.configurations.EnumConfig;
-import carpool.HttpServer.configurations.EnumConfig.LicenseType;
 import carpool.HttpServer.configurations.EnumConfig.MessageState;
 import carpool.HttpServer.configurations.EnumConfig.PassengerVerificationOrigin;
 import carpool.HttpServer.configurations.EnumConfig.TransactionState;
 import carpool.HttpServer.configurations.EnumConfig.UserState;
 import carpool.HttpServer.configurations.EnumConfig.VerificationState;
-import carpool.HttpServer.configurations.EnumConfig.VerificationType;
 import carpool.HttpServer.dbservice.NotificationDaoService;
 import carpool.HttpServer.dbservice.UserDaoService;
 import carpool.HttpServer.exception.*;
@@ -83,7 +82,7 @@ public class AdminService {
 		//only change state if it is currently pending
 		if (driverVerification.getState() == VerificationState.pending){
 			driverVerification.setState(VerificationState.rejected);
-			driverVerification.setReviewDate(Calendar.getInstance());
+			driverVerification.setReviewDate(DateUtility.getCurTimeInstance());
 			driverVerification.setReviewerId(reviewId);
 			CarpoolDaoDriver.updateDriverVerificationInDatabases(driverVerification);
 		}
@@ -94,7 +93,7 @@ public class AdminService {
 		//only change state if it is currently pending
 		if (passengerVerification.getState() == VerificationState.pending){
 			passengerVerification.setState(VerificationState.rejected);
-			passengerVerification.setReviewDate(Calendar.getInstance());
+			passengerVerification.setReviewDate(DateUtility.getCurTimeInstance());
 			passengerVerification.setReviewerId(reviewId);
 			CarpoolDaoPassenger.updatePassengerVerificationInDatabases(passengerVerification);
 		}
@@ -111,7 +110,7 @@ public class AdminService {
 			driverVerification.setLicenseIssueDate(issueDate);
 			driverVerification.setExpireDate(expireDate);
 			
-			driverVerification.setReviewDate(Calendar.getInstance());
+			driverVerification.setReviewDate(DateUtility.getCurTimeInstance());
 			driverVerification.setReviewerId(reviewId);
 			
 			//if verified, check if original user has passenger verification, if not, automatically add the passenger verification
@@ -139,7 +138,7 @@ public class AdminService {
 			
 			passengerVerification.setExpireDate(expireDate);
 			
-			passengerVerification.setReviewDate(Calendar.getInstance());
+			passengerVerification.setReviewDate(DateUtility.getCurTimeInstance());
 			passengerVerification.setReviewerId(reviewId);
 			CarpoolDaoPassenger.updatePassengerVerificationInDatabases(passengerVerification);
 		}

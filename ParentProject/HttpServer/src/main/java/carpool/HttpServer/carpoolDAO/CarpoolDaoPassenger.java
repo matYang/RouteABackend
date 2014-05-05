@@ -10,7 +10,6 @@ import java.util.ArrayList;
 import carpool.HttpServer.common.DateUtility;
 import carpool.HttpServer.common.DebugLog;
 import carpool.HttpServer.configurations.EnumConfig;
-import carpool.HttpServer.configurations.EnumConfig.PassengerVerificationOrigin;
 import carpool.HttpServer.configurations.EnumConfig.VerificationState;
 import carpool.HttpServer.exception.identityVerification.identityVerificationNotFound;
 import carpool.HttpServer.model.identityVerification.PassengerVerification;

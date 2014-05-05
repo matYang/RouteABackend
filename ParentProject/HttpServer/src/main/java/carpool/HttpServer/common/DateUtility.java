@@ -15,7 +15,7 @@ public class DateUtility {
 	
 	
 	public static Calendar getCurTimeInstance(){
-		return Calendar.getInstance(TimeZone.getTimeZone(ServerConfig.timeZoneIdNY));
+		return Calendar.getInstance(TimeZone.getTimeZone(ServerConfig.timeZoneIdCH));
 	}
 	
 	public static long getCurTime(){
@@ -40,7 +40,7 @@ public class DateUtility {
 	
 
 	public static String getNotificationDateString(Calendar day){
-		return (day.MONTH+1) + "月" + day.DAY_OF_MONTH + "日";
+		return (Calendar.MONTH+1) + "月" + Calendar.DAY_OF_MONTH + "日";
 	}
 
 	public static int getHourDifference(Calendar startTime, Calendar endTime){

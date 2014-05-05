@@ -1,18 +1,12 @@
 package carpool.AdminModule.serverMain;
 
-import java.util.ArrayList;
-
-import org.json.JSONObject;
 import org.restlet.Component;
 import org.restlet.Server;
 import org.restlet.data.Protocol;
 
 import carpool.AdminModule.service.RoutingService;
 import carpool.HttpServer.common.DebugLog;
-import carpool.HttpServer.configurations.ServerConfig;
-import carpool.HttpServer.configurations.EnumConfig.Gender;
 import carpool.HttpServer.dbservice.LocationDaoService;
-import carpool.HttpServer.factory.JSONFactory;
 
 
 
@@ -40,8 +34,8 @@ public class ServerMain {
 
 		// Add a new HTTP server listening on port
 
-		Server server = component.getServers().add(Protocol.HTTP, 8015);
-		server.getContext().getParameters().add("maxThreads", "256");
+		Server server = component.getServers().add(Protocol.HTTP, 8016);
+		server.getContext().getParameters().add("maxThreads", "64");
 
 		// Attach the sample application
 		RoutingService routingService = new RoutingService();
@@ -49,7 +43,6 @@ public class ServerMain {
 		component.getDefaultHost().attach(routingService);
 
 		// Start the component.
-		//log.info("ready to start");
 		DebugLog.d("ready to start");
 		component.start();
 

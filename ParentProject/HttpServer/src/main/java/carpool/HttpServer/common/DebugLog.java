@@ -1,19 +1,8 @@
 package carpool.HttpServer.common;
 
-import java.io.IOException;
-import java.io.PrintStream;
-import java.io.UnsupportedEncodingException;
-import java.util.Calendar;
-
-import org.apache.log4j.ConsoleAppender;
-import org.apache.log4j.DailyRollingFileAppender;
-import org.apache.log4j.Level;
 import org.apache.log4j.Logger;
-import org.apache.log4j.PatternLayout;
-import org.apache.log4j.RollingFileAppender;
 import org.json.JSONObject;
 
-import carpool.HttpServer.aws.*;
 import carpool.HttpServer.configurations.ServerConfig;
 import carpool.HttpServer.factory.JSONFactory;
 import carpool.HttpServer.interfaces.PseudoModel;

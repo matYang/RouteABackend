@@ -10,7 +10,6 @@ import org.junit.Test;
 import carpool.HttpServer.carpoolDAO.CarpoolDaoBasic;
 import carpool.HttpServer.carpoolDAO.CarpoolDaoMessage;
 import carpool.HttpServer.common.DateUtility;
-import carpool.HttpServer.common.DebugLog;
 import carpool.HttpServer.configurations.EnumConfig.DayTimeSlot;
 import carpool.HttpServer.configurations.EnumConfig.Gender;
 import carpool.HttpServer.configurations.EnumConfig.MessageType;
@@ -54,7 +53,7 @@ public class MessageDaoServiceTest {
 		ArrayList<Integer> priceList = new ArrayList<Integer>();
 		priceList.add(1);
 		PaymentMethod paymentMethod =null;
-		paymentMethod = paymentMethod.fromInt(0);
+		paymentMethod = PaymentMethod.fromInt(0);
 		MessageType type = MessageType.fromInt(2);
 		Gender genderRequirement = Gender.fromInt(0);		
 		DayTimeSlot timeSlot = DayTimeSlot.fromInt(0);	

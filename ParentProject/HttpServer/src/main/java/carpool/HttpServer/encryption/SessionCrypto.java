@@ -1,7 +1,6 @@
 package carpool.HttpServer.encryption;
 
 import java.io.UnsupportedEncodingException;
-import java.math.BigInteger;
 import java.security.InvalidAlgorithmParameterException;
 import java.security.InvalidKeyException;
 import java.security.NoSuchAlgorithmException;

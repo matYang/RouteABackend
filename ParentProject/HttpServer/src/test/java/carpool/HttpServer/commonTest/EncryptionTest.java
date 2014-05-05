@@ -4,14 +4,9 @@ import static org.junit.Assert.*;
 
 import java.io.UnsupportedEncodingException;
 import java.security.NoSuchAlgorithmException;
-import java.util.ArrayList;
-
-import javax.crypto.NoSuchPaddingException;
-
 import org.junit.Test;
 
 import carpool.HttpServer.carpoolDAO.CarpoolDaoBasic;
-import carpool.HttpServer.common.DebugLog;
 import carpool.HttpServer.encryption.EmailCrypto;
 import carpool.HttpServer.encryption.ImgCrypto;
 import carpool.HttpServer.encryption.SessionCrypto;

@@ -3,16 +3,9 @@ package carpool.HttpServer.awsTest;
 import static org.junit.Assert.fail;
 
 import java.io.File;
-import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Calendar;
-import java.util.Enumeration;
-
-import org.apache.log4j.Appender;
-import org.apache.log4j.FileAppender;
-import org.apache.log4j.Logger;
-import org.apache.log4j.varia.NullAppender;
 import org.junit.Test;
 
 import redis.clients.jedis.Jedis;
@@ -22,7 +15,6 @@ import carpool.HttpServer.carpoolDAO.CarpoolDaoBasic;
 import carpool.HttpServer.carpoolDAO.CarpoolDaoMessage;
 import carpool.HttpServer.carpoolDAO.CarpoolDaoUser;
 import carpool.HttpServer.common.DateUtility;
-import carpool.HttpServer.common.DebugLog;
 import carpool.HttpServer.configurations.DatabaseConfig;
 import carpool.HttpServer.configurations.ImageConfig;
 import carpool.HttpServer.configurations.ServerConfig;
@@ -101,7 +93,7 @@ public class AwsS3Test {
 		ArrayList<Integer> priceList = new ArrayList<Integer>();
 		priceList.add(1);
 		PaymentMethod paymentMethod =null;
-		paymentMethod = paymentMethod.fromInt(0);
+		paymentMethod = PaymentMethod.fromInt(0);
 		MessageType type = MessageType.fromInt(0);			
 		Gender genderRequirement = Gender.fromInt(0);		
 		DayTimeSlot timeSlot = DayTimeSlot.fromInt(0);	
@@ -234,7 +226,7 @@ public class AwsS3Test {
 		ArrayList<Integer> priceList = new ArrayList<Integer>();
 		priceList.add(1);
 		PaymentMethod paymentMethod =null;
-		paymentMethod = paymentMethod.fromInt(0);
+		paymentMethod = PaymentMethod.fromInt(0);
 		MessageType type = MessageType.fromInt(0);			
 		Gender genderRequirement = Gender.fromInt(0);		
 		DayTimeSlot timeSlot = DayTimeSlot.fromInt(0);	
@@ -335,7 +327,7 @@ public class AwsS3Test {
 		ArrayList<Integer> priceList = new ArrayList<Integer>();
 		priceList.add(1);
 		PaymentMethod paymentMethod =null;
-		paymentMethod = paymentMethod.fromInt(0);
+		paymentMethod = PaymentMethod.fromInt(0);
 		MessageType type = MessageType.fromInt(0);			
 		Gender genderRequirement = Gender.fromInt(0);		
 		DayTimeSlot timeSlot = DayTimeSlot.fromInt(0);	

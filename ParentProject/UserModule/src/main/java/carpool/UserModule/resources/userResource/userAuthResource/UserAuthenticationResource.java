@@ -6,9 +6,6 @@ import org.restlet.resource.*;
 import org.restlet.util.Series;
 import org.restlet.data.Cookie;
 import org.restlet.data.CookieSetting;
-import org.restlet.engine.header.Header;
-import org.restlet.data.Status;
-
 import carpool.HttpServer.common.DebugLog;
 import carpool.HttpServer.configurations.ServerConfig;
 import carpool.HttpServer.dbservice.*;
@@ -17,7 +14,6 @@ import carpool.HttpServer.exception.PseudoException;
 import carpool.HttpServer.exception.auth.AccountAuthenticationException;
 import carpool.HttpServer.exception.auth.DuplicateSessionCookieException;
 import carpool.HttpServer.exception.auth.SessionEncodingException;
-import carpool.HttpServer.model.*;
 
 public class UserAuthenticationResource extends ServerResource{
 

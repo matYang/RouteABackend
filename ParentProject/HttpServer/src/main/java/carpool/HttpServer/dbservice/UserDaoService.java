@@ -4,11 +4,8 @@ import java.sql.Connection;
 import java.util.*;
 
 
-import carpool.HttpServer.aws.AwsMain;
 import carpool.HttpServer.common.*;
 import carpool.HttpServer.configurations.EnumConfig;
-import carpool.HttpServer.configurations.EnumConfig.Gender;
-import carpool.HttpServer.configurations.EnumConfig.NotificationEvent;
 import carpool.HttpServer.configurations.EnumConfig.VerificationState;
 import carpool.HttpServer.carpoolDAO.*;
 import carpool.HttpServer.exception.PseudoException;
@@ -17,7 +14,6 @@ import carpool.HttpServer.exception.location.LocationNotFoundException;
 import carpool.HttpServer.exception.message.MessageNotFoundException;
 import carpool.HttpServer.exception.transaction.TransactionNotFoundException;
 import carpool.HttpServer.exception.user.UserNotFoundException;
-import carpool.HttpServer.exception.validation.ValidationException;
 import carpool.HttpServer.model.*;
 import carpool.HttpServer.model.identityVerification.DriverVerification;
 import carpool.HttpServer.model.identityVerification.PassengerVerification;

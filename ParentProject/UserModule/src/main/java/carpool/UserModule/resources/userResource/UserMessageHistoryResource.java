@@ -1,14 +1,9 @@
 package carpool.UserModule.resources.userResource;
 
 import java.util.ArrayList;
-import java.util.Calendar;
-
-import org.restlet.engine.header.Header;
 import org.restlet.ext.json.JsonRepresentation;
 import org.restlet.representation.Representation;
-import org.restlet.representation.StringRepresentation;
 import org.restlet.resource.*;
-import org.restlet.util.Series;
 import org.restlet.data.*;
 
 import org.json.JSONArray;

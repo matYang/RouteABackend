@@ -1,10 +1,7 @@
 package carpool.HttpServer.asyncTask;
-import java.io.BufferedWriter;
-import java.io.FileWriter;
 import java.io.IOException;
 
 import carpool.HttpServer.common.DebugLog;
-import carpool.HttpServer.configurations.ServerConfig;
 import carpool.HttpServer.dbservice.FileService;
 import carpool.HttpServer.interfaces.PseudoAsyncTask;
 import carpool.HttpServer.model.representation.SearchRepresentation;

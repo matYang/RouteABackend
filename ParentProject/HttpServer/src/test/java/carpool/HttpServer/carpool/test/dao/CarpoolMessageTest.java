@@ -5,15 +5,11 @@ import static org.junit.Assert.fail;
 
 import java.sql.Connection;
 import java.sql.Date;
-import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.Calendar;
-import java.util.Random;
-
 import org.junit.Test;
 
 import carpool.HttpServer.carpoolDAO.CarpoolDaoBasic;
@@ -22,25 +18,20 @@ import carpool.HttpServer.carpoolDAO.CarpoolDaoUser;
 import carpool.HttpServer.cleanRoutineTask.MessageCleaner;
 import carpool.HttpServer.common.DateUtility;
 import carpool.HttpServer.common.DebugLog;
-import carpool.HttpServer.common.HelperOperator;
-import carpool.HttpServer.common.Parser;
 import carpool.HttpServer.configurations.EnumConfig;
 import carpool.HttpServer.configurations.EnumConfig.DayTimeSlot;
 import carpool.HttpServer.configurations.EnumConfig.Gender;
 import carpool.HttpServer.configurations.EnumConfig.MessageState;
 import carpool.HttpServer.configurations.EnumConfig.MessageType;
 import carpool.HttpServer.configurations.EnumConfig.PaymentMethod;
-import carpool.HttpServer.dbservice.*;
 import carpool.HttpServer.exception.validation.ValidationException;
 import carpool.HttpServer.exception.location.LocationNotFoundException;
 import carpool.HttpServer.exception.message.MessageNotFoundException;
 import carpool.HttpServer.exception.user.UserNotFoundException;
-import carpool.HttpServer.exception.validation.ValidationException;
 import carpool.HttpServer.model.representation.SearchRepresentation;
 import carpool.HttpServer.model.Location;
 import carpool.HttpServer.model.Message;
 import carpool.HttpServer.model.User;
-import static java.lang.System.out;
 
 public class CarpoolMessageTest {
 
@@ -53,7 +44,7 @@ public class CarpoolMessageTest {
 		ArrayList<Integer> priceList = new ArrayList<Integer>();
 		priceList.add(1);
 		PaymentMethod paymentMethod =null;
-		paymentMethod = paymentMethod.fromInt(0);
+		paymentMethod = PaymentMethod.fromInt(0);
 		MessageType type = MessageType.fromInt(0);
 		Gender genderRequirement = Gender.fromInt(0);
 		MessageState state = MessageState.fromInt(0);
@@ -96,7 +87,7 @@ public class CarpoolMessageTest {
 		ArrayList<Integer> priceList = new ArrayList<Integer>();
 		priceList.add(1);
 		PaymentMethod paymentMethod =null;
-		paymentMethod = paymentMethod.fromInt(0);
+		paymentMethod = PaymentMethod.fromInt(0);
 		MessageType type = MessageType.fromInt(0);
 		Gender genderRequirement = Gender.fromInt(0);
 		MessageState state = MessageState.fromInt(0);
@@ -152,7 +143,7 @@ public class CarpoolMessageTest {
 		ArrayList<Integer> priceList = new ArrayList<Integer>();
 		priceList.add(1);
 		PaymentMethod paymentMethod =null;
-		paymentMethod = paymentMethod.fromInt(0);
+		paymentMethod = PaymentMethod.fromInt(0);
 		MessageType type = MessageType.fromInt(0);
 		Gender genderRequirement = Gender.fromInt(0);
 		MessageState state = MessageState.fromInt(0);
@@ -188,7 +179,7 @@ public class CarpoolMessageTest {
 		message.setArrival_Location(departureLocation);
 		message.setGenderRequirement(Gender.fromInt(1));
 		message.setType(MessageType.fromInt(1));
-		message.setPaymentMethod(paymentMethod.fromInt(1));	  
+		message.setPaymentMethod(PaymentMethod.fromInt(1));	  
 		priceList.remove(0);
 		priceList.add(2);	   
 		message.setArrival_priceList(priceList);
@@ -215,7 +206,7 @@ public class CarpoolMessageTest {
 		ArrayList<Integer> priceList = new ArrayList<Integer>();
 		priceList.add(1);
 		PaymentMethod paymentMethod =null;
-		paymentMethod = paymentMethod.fromInt(0);
+		paymentMethod = PaymentMethod.fromInt(0);
 		MessageType type = MessageType.fromInt(0);
 		Gender genderRequirement = Gender.fromInt(0);
 		MessageState state = MessageState.fromInt(0);
@@ -295,7 +286,7 @@ public class CarpoolMessageTest {
 		ArrayList<Integer> priceList = new ArrayList<Integer>();
 		priceList.add(1);
 		PaymentMethod paymentMethod =null;
-		paymentMethod = paymentMethod.fromInt(0);
+		paymentMethod = PaymentMethod.fromInt(0);
 		MessageType type = MessageType.fromInt(0);
 		MessageType type1 = MessageType.fromInt(1);
 		MessageType type2 = MessageType.fromInt(2);
@@ -523,7 +514,7 @@ public class CarpoolMessageTest {
 		ArrayList<Integer> priceList = new ArrayList<Integer>();
 		priceList.add(1);
 		PaymentMethod paymentMethod =null;
-		paymentMethod = paymentMethod.fromInt(0);
+		paymentMethod = PaymentMethod.fromInt(0);
 		MessageType type = MessageType.fromInt(0);
 		Gender genderRequirement = Gender.fromInt(0);		
 		DayTimeSlot timeSlot = DayTimeSlot.fromInt(0);		
@@ -593,7 +584,7 @@ public class CarpoolMessageTest {
 		ArrayList<Integer> priceList = new ArrayList<Integer>();
 		priceList.add(30);
 		PaymentMethod paymentMethod =null;
-		paymentMethod = paymentMethod.fromInt(0);
+		paymentMethod = PaymentMethod.fromInt(0);
 		MessageType type = MessageType.fromInt(2);
 		Gender genderRequirement = Gender.fromInt(0);
 		MessageState state = MessageState.fromInt(0);
@@ -710,7 +701,7 @@ public class CarpoolMessageTest {
 		ArrayList<Integer> priceList = new ArrayList<Integer>();
 		priceList.add(30);
 		PaymentMethod paymentMethod =null;
-		paymentMethod = paymentMethod.fromInt(0);
+		paymentMethod = PaymentMethod.fromInt(0);
 		MessageType type = MessageType.fromInt(2);
 		Gender genderRequirement = Gender.fromInt(0);
 		MessageState state = MessageState.fromInt(0);
@@ -811,7 +802,7 @@ public class CarpoolMessageTest {
 		ArrayList<Integer> priceList = new ArrayList<Integer>();
 		priceList.add(1);
 		PaymentMethod paymentMethod =null;
-		paymentMethod = paymentMethod.fromInt(0);
+		paymentMethod = PaymentMethod.fromInt(0);
 		MessageType type = MessageType.fromInt(0);
 		Gender genderRequirement = Gender.fromInt(0);
 		MessageState state = MessageState.fromInt(0);
@@ -856,7 +847,7 @@ public class CarpoolMessageTest {
 			message.setGenderRequirement(Gender.fromInt(1));
 			message.setType(MessageType.fromInt(1));
 			message.setState(MessageState.fromInt(1));
-			message.setPaymentMethod(paymentMethod.fromInt(1));
+			message.setPaymentMethod(PaymentMethod.fromInt(1));
 			message.setArrival_seatsBooked(3);
 			message.setArrival_seatsNumber(100);
 			message.setDeparture_time(DateUtility.DateToCalendar(new Date(1)));

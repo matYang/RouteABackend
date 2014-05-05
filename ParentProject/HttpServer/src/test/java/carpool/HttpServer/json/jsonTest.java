@@ -47,7 +47,7 @@ public class jsonTest {
 		ArrayList<Integer> priceList = new ArrayList<Integer>();
 		priceList.add(1);
 		PaymentMethod paymentMethod =null;
-		paymentMethod = paymentMethod.fromInt(0);
+		paymentMethod = PaymentMethod.fromInt(0);
 		MessageType type = MessageType.fromInt(0);
 		Gender genderRequirement = Gender.fromInt(0);
 		MessageState state = MessageState.fromInt(0);

@@ -1,14 +1,8 @@
 package carpool.HttpServer.dbservice;
 
-import java.util.Calendar;
-
-import org.apache.commons.lang3.RandomStringUtils;
-
-import carpool.HttpServer.carpoolDAO.CarpoolDaoBasic;
 import carpool.HttpServer.carpoolDAO.CarpoolDaoUser;
 import carpool.HttpServer.common.DateUtility;
 import carpool.HttpServer.common.DebugLog;
-import carpool.HttpServer.configurations.ServerConfig;
 import carpool.HttpServer.exception.PseudoException;
 import carpool.HttpServer.exception.user.UserNotFoundException;
 import carpool.HttpServer.exception.validation.ValidationException;

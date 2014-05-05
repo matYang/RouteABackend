@@ -1,6 +1,4 @@
 package carpool.HttpServer.MultiThreadsHandling;
-import static org.junit.Assert.fail;
-
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.List;
@@ -15,6 +13,7 @@ import carpool.HttpServer.asyncTask.MyTestTask;
 import carpool.HttpServer.carpoolDAO.CarpoolDaoBasic;
 import carpool.HttpServer.carpoolDAO.CarpoolDaoMessage;
 import carpool.HttpServer.carpoolDAO.CarpoolDaoUser;
+import carpool.HttpServer.common.DateUtility;
 import carpool.HttpServer.common.DebugLog;
 import carpool.HttpServer.configurations.EnumConfig.DayTimeSlot;
 import carpool.HttpServer.configurations.EnumConfig.Gender;
@@ -52,12 +51,12 @@ public class MultiThreadsHandlingTest {
 	public void Test() throws LocationNotFoundException{
 		CarpoolDaoBasic.clearBothDatabase();		
 		//Date
-		Calendar dt = Calendar.getInstance();		
-		Calendar at = Calendar.getInstance();
+		Calendar dt = DateUtility.getCurTimeInstance();		
+		Calendar at = DateUtility.getCurTimeInstance();
 		at.add(Calendar.DAY_OF_YEAR, 1);		
-		Calendar dt2 = Calendar.getInstance();	
+		Calendar dt2 = DateUtility.getCurTimeInstance();	
 		dt2.add(Calendar.DAY_OF_YEAR, -1);	
-		Calendar dt3 = Calendar.getInstance();	
+		Calendar dt3 = DateUtility.getCurTimeInstance();	
 		dt3.add(Calendar.DAY_OF_YEAR, -2);
 
 		//Location
@@ -84,7 +83,7 @@ public class MultiThreadsHandlingTest {
 		ArrayList<Integer> priceList = new ArrayList<Integer>();
 		priceList.add(1);
 		PaymentMethod paymentMethod =null;
-		paymentMethod = paymentMethod.fromInt(0);
+		paymentMethod = PaymentMethod.fromInt(0);
 		MessageType type = MessageType.fromInt(0);		
 		MessageType type2 = MessageType.fromInt(2);
 		Gender genderRequirement = Gender.fromInt(0);		

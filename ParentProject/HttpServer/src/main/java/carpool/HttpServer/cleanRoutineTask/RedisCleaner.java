@@ -1,16 +1,13 @@
 package carpool.HttpServer.cleanRoutineTask;
 
-import java.util.Calendar;
-import java.util.List;
 import java.util.Set;
 
 import redis.clients.jedis.Jedis;
 
-import carpool.HttpServer.aws.AwsMain;
 import carpool.HttpServer.carpoolDAO.CarpoolDaoBasic;
 import carpool.HttpServer.common.DateUtility;
 import carpool.HttpServer.configurations.DatabaseConfig;
-import carpool.HttpServer.model.representation.SearchRepresentation;
+import carpool.HttpServer.dbservice.FileService;
 
 public class RedisCleaner {
 
@@ -65,7 +62,7 @@ public class RedisCleaner {
 	private static void migrateSearchHistory(){
 		//this is the set of keys that holds the list of sr, to find the id, extract it from each of the key, migrate all their SRs to their S3 buckets
 		//this will be running on a different thread, but assume safe to use the aws here
-		AwsMain.migrateAlltheUsersSearchHistory();		
+		FileService.migrateAlltheUsersSearchHistory();		
 	}
 
 }

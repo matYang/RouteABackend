@@ -1,6 +1,5 @@
 package carpool.HttpServer.interfaces;
 
-import org.json.JSONException;
 import org.json.JSONObject;
 
 public interface PseudoRepresentation extends PseudoModel{

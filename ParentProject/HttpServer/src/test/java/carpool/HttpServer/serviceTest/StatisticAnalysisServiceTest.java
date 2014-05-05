@@ -33,11 +33,12 @@ public class StatisticAnalysisServiceTest {
 	
 	@Test
 	public void testTimeStampConverter(){
-		Calendar oldr = Calendar.getInstance(TimeZone.getTimeZone("Asia/Shanghai"));
+		Calendar oldr = DateUtility.getCurTimeInstance();
 		oldr.add(Calendar.HOUR_OF_DAY, 16);	
-		Calendar test = Calendar.getInstance(TimeZone.getTimeZone(ServerConfig.timeZoneStandard));
+		Calendar test = DateUtility.getCurTimeInstance();
 		test.add(Calendar.HOUR_OF_DAY, 16);
-		if(DateUtility.convertToStandard(oldr).HOUR_OF_DAY-test.HOUR_OF_DAY==0){
+		DateUtility.convertToStandard(oldr);
+		if(Calendar.HOUR_OF_DAY-Calendar.HOUR_OF_DAY==0){
 			//Passed;
 		}else{
 			fail();
@@ -184,7 +185,7 @@ public class StatisticAnalysisServiceTest {
 		ArrayList<Integer> priceList = new ArrayList<Integer>();
 		priceList.add(1);
 		PaymentMethod paymentMethod =null;
-		paymentMethod = paymentMethod.fromInt(0);
+		paymentMethod = PaymentMethod.fromInt(0);
 		MessageType type = MessageType.fromInt(0);
 		MessageType type1 = MessageType.fromInt(1);
 		MessageType type2 = MessageType.fromInt(2);
@@ -321,7 +322,7 @@ public class StatisticAnalysisServiceTest {
 		ArrayList<Integer> priceList = new ArrayList<Integer>();
 		priceList.add(1);
 		PaymentMethod paymentMethod =null;
-		paymentMethod = paymentMethod.fromInt(0);
+		paymentMethod = PaymentMethod.fromInt(0);
 		MessageType type = MessageType.fromInt(0);
 		MessageType type1 = MessageType.fromInt(1);
 		MessageType type2 = MessageType.fromInt(2);

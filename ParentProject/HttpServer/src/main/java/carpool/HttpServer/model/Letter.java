@@ -1,25 +1,14 @@
 package carpool.HttpServer.model;
 
-import java.math.BigDecimal;
-import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.Calendar;
-import java.util.Date;
-
-import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
 import carpool.HttpServer.common.DateUtility;
-import carpool.HttpServer.common.HelperOperator;
-import carpool.HttpServer.common.Validator;
-import carpool.HttpServer.configurations.ServerConfig;
 import carpool.HttpServer.configurations.EnumConfig.*;
 import carpool.HttpServer.exception.validation.ValidationException;
-import carpool.HttpServer.factory.JSONFactory;
 import carpool.HttpServer.interfaces.PseudoModel;
 import carpool.HttpServer.interfaces.PseudoValidatable;
-import carpool.HttpServer.model.representation.SearchRepresentation;
 
 
 

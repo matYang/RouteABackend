@@ -28,7 +28,10 @@ public class DatabaseConfig {
 	public static final String UserSRArrival = "UserSRArrival";
 	public static final String DatabasesDeparture = "DatabasesDeparture";
 	public static final String DatabasesArrival = "DatabasesArrival";
-	public static final String sqlPass = ServerConfig.configurationMap.get("sqlPass");	
+	public static final String sqlPass = ServerConfig.configurationMap.get("sqlPass");
+	public static final String sqlUser = ServerConfig.configurationMap.get("sqlUser");
+	
+
 	
 
 }

@@ -1,6 +1,5 @@
 package carpool.HttpServer.model.representation;
 
-import java.util.ArrayList;
 import java.util.Calendar;
 
 import org.json.JSONException;
@@ -11,9 +10,7 @@ import carpool.HttpServer.configurations.ServerConfig;
 import carpool.HttpServer.configurations.EnumConfig;
 import carpool.HttpServer.configurations.EnumConfig.DayTimeSlot;
 import carpool.HttpServer.configurations.EnumConfig.MessageType;
-import carpool.HttpServer.interfaces.PseudoModel;
 import carpool.HttpServer.interfaces.PseudoRepresentation;
-import carpool.HttpServer.model.Location;
 
 public class SearchRepresentation implements PseudoRepresentation{
 	

@@ -2,7 +2,6 @@ package carpool.HttpServer.model.representation;
 
 import carpool.HttpServer.configurations.ServerConfig;
 import carpool.HttpServer.configurations.EnumConfig.Gender;
-import carpool.HttpServer.model.Location;
 
 
 public class UserSearchRepresentation {

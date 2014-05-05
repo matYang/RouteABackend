@@ -1,7 +1,5 @@
 package carpool.HttpServer.clearDatabase;
 
-import static org.junit.Assert.*;
-
 import org.junit.Test;
 
 import carpool.HttpServer.carpoolDAO.CarpoolDaoBasic;

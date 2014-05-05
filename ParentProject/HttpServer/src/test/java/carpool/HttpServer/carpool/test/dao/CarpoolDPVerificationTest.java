@@ -11,6 +11,7 @@ import carpool.HttpServer.carpoolDAO.CarpoolDaoBasic;
 import carpool.HttpServer.carpoolDAO.CarpoolDaoDriver;
 import carpool.HttpServer.carpoolDAO.CarpoolDaoPassenger;
 import carpool.HttpServer.carpoolDAO.CarpoolDaoUser;
+import carpool.HttpServer.common.DateUtility;
 import carpool.HttpServer.configurations.EnumConfig;
 import carpool.HttpServer.configurations.EnumConfig.Gender;
 import carpool.HttpServer.configurations.EnumConfig.LicenseType;
@@ -55,7 +56,7 @@ public class CarpoolDPVerificationTest {
 
 		String LicenseNum = "32344fgfdgtert";
 		LicenseType lt = EnumConfig.LicenseType.driverLisence_a;
-		Calendar licenseIssueDate = Calendar.getInstance();
+		Calendar licenseIssueDate = DateUtility.getCurTimeInstance();
 		String licenseImgLink = "23rhj0eirhf_-=sdfewrf234rewffdsf&8r343gf3rfgerafg4th5yyt45tgerfgtwrvy56";
 		PassengerVerificationOrigin origin = EnumConfig.PassengerVerificationOrigin.driver;
 		DriverVerification driver = new DriverVerification(user.getUserId(), user.getName(),LicenseNum , lt,licenseImgLink);
@@ -103,7 +104,7 @@ public class CarpoolDPVerificationTest {
 
 		String LicenseNum = "32344fgfdgtert";
 		LicenseType lt = EnumConfig.LicenseType.driverLisence_a;
-		Calendar licenseIssueDate = Calendar.getInstance();
+		Calendar licenseIssueDate = DateUtility.getCurTimeInstance();
 		String licenseImgLink = "23rhj0eirhf_-=sdfewrf234rewffdsf&8r343gf3rfgerafg4th5yyt45tgerfgtwrvy56";
 		PassengerVerificationOrigin origin = EnumConfig.PassengerVerificationOrigin.driver;
 		DriverVerification driver = new DriverVerification(user.getUserId(), user.getName(),LicenseNum , lt, licenseImgLink);
@@ -162,7 +163,7 @@ public class CarpoolDPVerificationTest {
 
 		String LicenseNum = "32344fgfdgtert";
 		LicenseType lt = EnumConfig.LicenseType.driverLisence_a;
-		Calendar licenseIssueDate = Calendar.getInstance();
+		Calendar licenseIssueDate = DateUtility.getCurTimeInstance();
 		String licenseImgLink = "23rhj0eirhf_-=sdfewrf234rewffdsf&8r343gf3rfgerafg4th5yyt45tgerfgtwrvy56";
 		PassengerVerificationOrigin origin = EnumConfig.PassengerVerificationOrigin.driver;
 		DriverVerification driver = new DriverVerification(user.getUserId(), user.getName(),LicenseNum , lt, licenseImgLink);
@@ -235,7 +236,7 @@ public class CarpoolDPVerificationTest {
 
 		String LicenseNum = "32344fgfdgtert";
 		LicenseType lt = EnumConfig.LicenseType.driverLisence_a;
-		Calendar licenseIssueDate = Calendar.getInstance();
+		Calendar licenseIssueDate = DateUtility.getCurTimeInstance();
 		String licenseImgLink = "23rhj0eirhf_-=sdfewrf234rewffdsf&8r343gf3rfgerafg4th5yyt45tgerfgtwrvy56";
 		PassengerVerificationOrigin origin = EnumConfig.PassengerVerificationOrigin.driver;
 		DriverVerification driver = new DriverVerification(user.getUserId(), user.getName(),LicenseNum , lt, licenseImgLink);
@@ -319,7 +320,7 @@ public class CarpoolDPVerificationTest {
 
 		String LicenseNum = "32344fgfdgtert";
 		LicenseType lt = EnumConfig.LicenseType.driverLisence_a;
-		Calendar licenseIssueDate = Calendar.getInstance();
+		Calendar licenseIssueDate = DateUtility.getCurTimeInstance();
 		String licenseImgLink = "23rhj0eirhf_-=sdfewrf234rewffdsf&8r343gf3rfgerafg4th5yyt45tgerfgtwrvy56";
 		PassengerVerificationOrigin origin = EnumConfig.PassengerVerificationOrigin.driver;
 		DriverVerification driver = new DriverVerification(user.getUserId(), user.getName(),LicenseNum , lt, licenseImgLink);
@@ -424,7 +425,7 @@ public class CarpoolDPVerificationTest {
 
 		String LicenseNum = "32344fgfdgtert";
 		LicenseType lt = EnumConfig.LicenseType.driverLisence_a;
-		Calendar licenseIssueDate = Calendar.getInstance();
+		Calendar licenseIssueDate = DateUtility.getCurTimeInstance();
 		String licenseImgLink = "23rhj0eirhf_-=sdfewrf234rewffdsf&8r343gf3rfgerafg4th5yyt45tgerfgtwrvy56";
 		PassengerVerificationOrigin origin = EnumConfig.PassengerVerificationOrigin.driver;
 		DriverVerification driver = new DriverVerification(user.getUserId(), user.getName(),LicenseNum , lt, licenseImgLink);

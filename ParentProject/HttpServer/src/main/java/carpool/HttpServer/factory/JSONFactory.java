@@ -1,7 +1,6 @@
 package carpool.HttpServer.factory;
 
 import java.util.ArrayList;
-import java.util.Collection;
 import java.util.HashMap;
 import java.util.Map.Entry;
 
@@ -13,7 +12,6 @@ import carpool.HttpServer.common.DebugLog;
 import carpool.HttpServer.configurations.DatabaseConfig;
 import carpool.HttpServer.configurations.EnumConfig.Gender;
 import carpool.HttpServer.configurations.EnumConfig.PaymentMethod;
-import carpool.HttpServer.configurations.EnumConfig.UserState;
 import carpool.HttpServer.interfaces.*;
 import carpool.HttpServer.model.Letter;
 import carpool.HttpServer.model.Location;

@@ -11,21 +11,11 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
-import java.io.OutputStreamWriter;
-import java.io.PrintWriter;
-import java.io.Writer;
 import java.net.URL;
-import java.nio.charset.Charset;
-import java.nio.file.Files;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
 import java.util.Set;
 
-import org.apache.commons.io.IOUtils;
 import org.apache.log4j.Logger;
 import redis.clients.jedis.Jedis;
 import carpool.HttpServer.carpoolDAO.CarpoolDaoBasic;
@@ -53,12 +43,11 @@ public class AwsMain {
 	private static final String myAccessKeyID = ServerConfig.AccessKeyID;
 	private static final String mySecretKey = ServerConfig.SecretKey;
 	private static final String ProfileBucket = ServerConfig.ProfileBucket;	
-	private static final AWSCredentials myCredentials = new BasicAWSCredentials(myAccessKeyID, mySecretKey);
 
 	static Logger logger = Logger.getLogger(AwsMain.class);
 
 	public static void createUserFile(int userId){
-
+		AWSCredentials myCredentials = new BasicAWSCredentials(myAccessKeyID, mySecretKey);
 		AmazonS3 s3Client = new AmazonS3Client(myCredentials);
 		File file = new File(getUserSHLocalFileName(userId));
 		
@@ -80,7 +69,8 @@ public class AwsMain {
 
 
 
-	public static boolean migrateUserSearchHistory(int userId){
+	private static boolean migrateUserSearchHistory(int userId){
+		AWSCredentials myCredentials = new BasicAWSCredentials(myAccessKeyID, mySecretKey);
 		AmazonS3 s3Client = new AmazonS3Client(myCredentials);
 		Jedis redis = CarpoolDaoBasic.getJedis();
 
@@ -143,12 +133,12 @@ public class AwsMain {
 		return true;
 	} 
 	
-	
 	public static  ArrayList<SearchRepresentation> getUserSearchHistory(int userId){
 		ArrayList<SearchRepresentation> list = new ArrayList<SearchRepresentation>();
 		File file = new File(getUserSHLocalFileName(userId));
 		
 		S3Object object = null;
+		AWSCredentials myCredentials = new BasicAWSCredentials(myAccessKeyID, mySecretKey);
 		AmazonS3 s3Client = new AmazonS3Client(myCredentials);
 		GetObjectRequest req = new GetObjectRequest(ProfileBucket, getUserSHFileName(userId));
 
@@ -186,7 +176,6 @@ public class AwsMain {
 		return list;
 	}
 
-
 	public static void storeSearchHistory(SearchRepresentation sr,int userId){
 
 		String rediskey = getUserSHRedisKey(userId);
@@ -196,6 +185,7 @@ public class AwsMain {
 		S3Object object = null;
 		//check
 		if(redis.llen(rediskey) >= DatabaseConfig.redisSearchHistoryUpbound){
+			AWSCredentials myCredentials = new BasicAWSCredentials(myAccessKeyID, mySecretKey);
 			AmazonS3 s3Client = new AmazonS3Client(myCredentials);
 			List<String> appendString = redis.lrange(rediskey, 0, DatabaseConfig.redisSearchHistoryUpbound-1);
 			String fileName = getUserSHFileName(userId);
@@ -253,7 +243,7 @@ public class AwsMain {
 	
 	//the boolean shouldDelete is used for testing so that the sample is not deleted every time
 	public static String uploadImg(int userId, File file, String imgName, String Bucket,boolean shouldDelete){
-
+		AWSCredentials myCredentials = new BasicAWSCredentials(myAccessKeyID, mySecretKey);
 		AmazonS3Client s3Client = new AmazonS3Client(myCredentials);		
 		URL s = null;
 		try{

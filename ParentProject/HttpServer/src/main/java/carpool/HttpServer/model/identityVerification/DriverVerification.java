@@ -9,8 +9,6 @@ import carpool.HttpServer.common.DateUtility;
 import carpool.HttpServer.configurations.EnumConfig.LicenseType;
 import carpool.HttpServer.configurations.EnumConfig.VerificationState;
 import carpool.HttpServer.configurations.EnumConfig.VerificationType;
-import carpool.HttpServer.interfaces.PseudoModel;
-import carpool.HttpServer.model.Letter;
 
 public class DriverVerification extends IdentityVerification{
 
@@ -22,8 +20,8 @@ public class DriverVerification extends IdentityVerification{
 
 	//id, issue date, expire date, review id, review date
 	public DriverVerification(int userId, String realName, String licenseNumber, LicenseType licenseType, String licenseImgLink) {
-		super(VerificationType.driver,  -1, userId, realName, licenseNumber, licenseType, Calendar.getInstance(), Calendar.getInstance(), VerificationState.pending, Calendar.getInstance(), -1, -1);
-		this.licenseIssueDate = Calendar.getInstance();
+		super(VerificationType.driver,  -1, userId, realName, licenseNumber, licenseType, DateUtility.getCurTimeInstance(), DateUtility.getCurTimeInstance(), VerificationState.pending, DateUtility.getCurTimeInstance(), -1, -1);
+		this.licenseIssueDate = DateUtility.getCurTimeInstance();
 		this.licenseImgLink = licenseImgLink;
 		this._associatedPVId = -1;
 	}

@@ -9,7 +9,6 @@ import carpool.HttpServer.cleanRoutineTask.RedisCleaner;
 import carpool.HttpServer.cleanRoutineTask.TransactionCleaner;
 import carpool.HttpServer.common.DateUtility;
 import carpool.HttpServer.exception.location.LocationNotFoundException;
-import carpool.HttpServer.model.*;
 
 
 public class Clean{
