@@ -27,12 +27,13 @@ public class EmailRelayTask implements PseudoAsyncTask{
 	private String receiver;
 	private String subject;
 	private String body;
-
-	
-	public EmailRelayTask(String receiver,String subject, String body){
+	private String kind;
+		
+	public EmailRelayTask(String receiver,String subject, String body,String kind){
 		this.receiver = receiver;
 		this.subject = subject;
 		this.body = body;
+		this.kind = kind;
 	}
 
 	public boolean execute(){
@@ -62,8 +63,8 @@ public class EmailRelayTask implements PseudoAsyncTask{
 				
 				msg.setFrom(new InternetAddress(sender));
 				msg.setRecipients(Message.RecipientType.TO,InternetAddress.parse(receiver, false));
-				msg.setSubject(MimeUtility.encodeText(subject, "utf-8", "B"));
-				msg.setText(body);
+				msg.setSubject(MimeUtility.encodeText(subject, "utf-8", "B"));				
+				msg.setContent(body,"text/" + kind);
 				msg.setHeader("X-Mailer", "LOTONtechEmail");
 				msg.setSentDate(new Date());
 				Transport transport;
