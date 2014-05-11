@@ -123,7 +123,8 @@ public class CarpoolDaoBasic {
         String query9 = "TRUNCATE TABLE carpoolDAODriver";
         String query10 = "TRUNCATE TABLE carpoolDAOPassenger";
         String query11 = "TRUNCATE TABLE defaultLocations";
-        String query12 = "SET FOREIGN_KEY_CHECKS=1;";
+        String query12 = "TRUNCATE TABLE adminAccount";
+        String query13 = "SET FOREIGN_KEY_CHECKS=1;";
         try{
         	conn = getSQLConnection();
         	stmt = conn.createStatement();
@@ -141,6 +142,7 @@ public class CarpoolDaoBasic {
         	stmt.addBatch(query10);
         	stmt.addBatch(query11);
         	stmt.addBatch(query12);
+        	stmt.addBatch(query13);
         	stmt.executeBatch();
         } catch(SQLException e) {
         	DebugLog.d(e);

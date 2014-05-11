@@ -39,6 +39,7 @@
 				<directory>src/main/resources</directory>
 				<includes>
 					<include>log4j.properties</include>
+					<include>LocationData.txt</include>
 				</includes>
 				<targetPath>..</targetPath>
 			</resource>
