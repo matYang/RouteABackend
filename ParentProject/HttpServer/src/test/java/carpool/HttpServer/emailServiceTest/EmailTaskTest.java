@@ -13,7 +13,7 @@ import carpool.HttpServer.exception.validation.ValidationException;
 import carpool.HttpServer.model.Location;
 import carpool.HttpServer.model.User;
 
-public class SESRelayTaskTest {
+public class EmailTaskTest {
 	
 	@Test
 	public void testActivateEmail(){
@@ -44,7 +44,7 @@ public class SESRelayTaskTest {
 		String newEmail = "uwse@me.com";
 		if(EmailDaoService.sendActivationEmail(user.getUserId(), newEmail)){
 			try {
-				Thread.sleep(5000);
+				Thread.sleep(20000);
 			} catch (InterruptedException e) {
 				e.printStackTrace();
 			}
@@ -70,8 +70,8 @@ public class SESRelayTaskTest {
 		Location departureLocation= new Location(province,city1,region1,"Test1","Test11",lat1,lng1,arrival_Id);
 		Location arrivalLocation = new Location(province,city2,region2,"Test2","Test22",lat2,lng2,departure_Id);
 		
-		User user =  new User("xch93318yeah", "lifecentric.o2o@gmail.com", departureLocation, Gender.both);		
-		String email = "lifecentric.o2o@gmail.com";
+		User user =  new User("xch93318yeah", "teachersgone@hotmail.com", departureLocation, Gender.both);		
+		String email = "teachersgone@hotmail.com";
 		user.setEmail(email);
 		try {
 			CarpoolDaoUser.addUserToDatabase(user);
@@ -83,7 +83,7 @@ public class SESRelayTaskTest {
 		try {
 			if(EmailDaoService.sendForgotPasswordEmail(email)){
 				try {
-					Thread.sleep(5000);
+					Thread.sleep(20000);
 				} catch (InterruptedException e) {
 					e.printStackTrace();
 				}
