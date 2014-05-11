@@ -32,7 +32,7 @@ import carpool.HttpServer.exception.validation.ValidationException;
 import carpool.HttpServer.factory.JSONFactory;
 import carpool.HttpServer.model.User;
 import carpool.HttpServer.model.identityVerification.DriverVerification;
-import carpool.UserModule.resources.PseudoResource;
+import carpool.HttpServer.resources.PseudoResource;
 
 public class UserDriverVerificationResource extends PseudoResource{
 	

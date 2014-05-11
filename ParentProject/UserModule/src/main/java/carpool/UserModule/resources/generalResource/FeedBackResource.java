@@ -10,7 +10,7 @@ import org.restlet.data.Status;
 
 import carpool.HttpServer.common.DebugLog;
 import carpool.HttpServer.configurations.ValidationConfig;
-import carpool.UserModule.resources.PseudoResource;
+import carpool.HttpServer.resources.PseudoResource;
 
 
 public class FeedBackResource extends PseudoResource{

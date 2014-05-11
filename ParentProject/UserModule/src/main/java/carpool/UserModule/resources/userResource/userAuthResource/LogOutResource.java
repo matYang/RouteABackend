@@ -8,7 +8,7 @@ import org.restlet.data.Status;
 import org.json.JSONObject;
 
 import carpool.HttpServer.exception.PseudoException;
-import carpool.UserModule.resources.PseudoResource;
+import carpool.HttpServer.resources.PseudoResource;
 
 
 

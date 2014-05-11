@@ -8,7 +8,7 @@ import org.restlet.resource.Get;
 import carpool.HttpServer.dbservice.FileService;
 import carpool.HttpServer.factory.JSONFactory;
 import carpool.HttpServer.model.representation.SearchRepresentation;
-import carpool.UserModule.resources.PseudoResource;
+import carpool.HttpServer.resources.PseudoResource;
 
 public class UserSearchHistoryResource extends PseudoResource{
 

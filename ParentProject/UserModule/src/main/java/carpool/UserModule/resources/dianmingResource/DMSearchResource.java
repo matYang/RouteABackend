@@ -14,7 +14,7 @@ import carpool.HttpServer.exception.auth.AccountAuthenticationException;
 import carpool.HttpServer.factory.JSONFactory;
 import carpool.HttpServer.model.*;
 import carpool.HttpServer.model.representation.SearchRepresentation;
-import carpool.UserModule.resources.PseudoResource;
+import carpool.HttpServer.resources.PseudoResource;
 
 
 public class DMSearchResource extends PseudoResource{

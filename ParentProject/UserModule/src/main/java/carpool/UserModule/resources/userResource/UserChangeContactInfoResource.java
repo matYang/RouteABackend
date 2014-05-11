@@ -22,7 +22,7 @@ import carpool.HttpServer.exception.user.UserNotFoundException;
 import carpool.HttpServer.exception.validation.ValidationException;
 import carpool.HttpServer.factory.JSONFactory;
 import carpool.HttpServer.model.*;
-import carpool.UserModule.resources.PseudoResource;
+import carpool.HttpServer.resources.PseudoResource;
 
 
 public class UserChangeContactInfoResource extends PseudoResource{

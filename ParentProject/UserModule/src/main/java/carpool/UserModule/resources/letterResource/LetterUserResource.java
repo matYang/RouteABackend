@@ -11,7 +11,7 @@ import carpool.HttpServer.dbservice.LetterDaoService;
 import carpool.HttpServer.exception.PseudoException;
 import carpool.HttpServer.factory.JSONFactory;
 import carpool.HttpServer.model.User;
-import carpool.UserModule.resources.PseudoResource;
+import carpool.HttpServer.resources.PseudoResource;
 
 public class LetterUserResource extends PseudoResource{
 

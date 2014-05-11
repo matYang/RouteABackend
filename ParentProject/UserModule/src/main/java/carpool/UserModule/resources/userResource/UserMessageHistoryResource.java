@@ -12,7 +12,7 @@ import carpool.HttpServer.dbservice.*;
 import carpool.HttpServer.exception.PseudoException;
 import carpool.HttpServer.factory.JSONFactory;
 import carpool.HttpServer.model.*;
-import carpool.UserModule.resources.PseudoResource;
+import carpool.HttpServer.resources.PseudoResource;
 
 
 public class UserMessageHistoryResource extends PseudoResource{	

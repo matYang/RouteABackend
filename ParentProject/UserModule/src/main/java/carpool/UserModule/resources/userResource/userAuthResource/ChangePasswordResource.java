@@ -9,7 +9,7 @@ import org.json.JSONObject;
 import carpool.HttpServer.common.Validator;
 import carpool.HttpServer.dbservice.*;
 import carpool.HttpServer.exception.PseudoException;
-import carpool.UserModule.resources.PseudoResource;
+import carpool.HttpServer.resources.PseudoResource;
 
 
 public class ChangePasswordResource extends PseudoResource{

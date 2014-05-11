@@ -28,7 +28,7 @@ import carpool.HttpServer.dbservice.UserDaoService;
 import carpool.HttpServer.exception.PseudoException;
 import carpool.HttpServer.exception.validation.ValidationException;
 import carpool.HttpServer.model.identityVerification.PassengerVerification;
-import carpool.UserModule.resources.PseudoResource;
+import carpool.HttpServer.resources.PseudoResource;
 
 public class UserPassengerVerificationResource extends PseudoResource{
 

@@ -1,4 +1,4 @@
-package carpool.AdminModule.resources;
+package carpool.HttpServer.resources;
 
 import java.util.ArrayList;
 
@@ -15,7 +15,7 @@ import carpool.HttpServer.exception.auth.AccountAuthenticationException;
 import carpool.HttpServer.exception.auth.DuplicateSessionCookieException;
 import carpool.HttpServer.exception.auth.SessionEncodingException;
 
-public class UserAuthenticationResource extends ServerResource{
+public class AuthenticationResource extends ServerResource{
 
 	/**
 	 * automatically try to authenticate users on login and sensitive API calls, checks the request to see if there is the right cookie

@@ -10,7 +10,7 @@ import org.restlet.resource.Get;
 import carpool.HttpServer.dbservice.LocationDaoService;
 import carpool.HttpServer.factory.JSONFactory;
 import carpool.HttpServer.model.representation.DefaultLocationRepresentation;
-import carpool.UserModule.resources.PseudoResource;
+import carpool.HttpServer.resources.PseudoResource;
 
 public class LocationDefaultResource extends PseudoResource{
 	

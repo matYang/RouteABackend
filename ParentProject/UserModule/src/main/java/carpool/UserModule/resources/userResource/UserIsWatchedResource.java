@@ -8,7 +8,7 @@ import org.restlet.resource.Get;
 import carpool.HttpServer.dbservice.UserDaoService;
 import carpool.HttpServer.exception.PseudoException;
 import carpool.HttpServer.factory.JSONFactory;
-import carpool.UserModule.resources.PseudoResource;
+import carpool.HttpServer.resources.PseudoResource;
 
 public class UserIsWatchedResource extends PseudoResource{
 	

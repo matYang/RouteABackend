@@ -1,4 +1,4 @@
-package carpool.AdminModule.resources;
+package carpool.HttpServer.resources;
 
 import java.io.UnsupportedEncodingException;
 import java.util.ArrayList;
@@ -68,13 +68,13 @@ public class PseudoResource extends ServerResource{
 	 *  
 	 ******************/
 	public boolean validateAuthentication(int userId) throws PseudoException{
-		return !ServerConfig.cookieEnabled ? true : UserAuthenticationResource.validateCookieSession(userId, this.getSessionString());
+		return !ServerConfig.cookieEnabled ? true : AuthenticationResource.validateCookieSession(userId, this.getSessionString());
 	}
 
 	
 	public void addAuthenticationSession(int userId) throws PseudoException{
 		Series<CookieSetting> cookieSettings = this.getResponse().getCookieSettings(); 
-		CookieSetting newCookie = UserAuthenticationResource.openCookieSession(userId);
+		CookieSetting newCookie = AuthenticationResource.openCookieSession(userId);
 		cookieSettings.clear();
 		cookieSettings.add(newCookie);
 		this.setCookieSettings(cookieSettings);
@@ -82,7 +82,7 @@ public class PseudoResource extends ServerResource{
 	
 	public void closeAuthenticationSession(int userId) throws PseudoException{
 		Series<Cookie> cookies = this.getRequest().getCookies();
-		UserAuthenticationResource.closeCookieSession(cookies);
+		AuthenticationResource.closeCookieSession(cookies);
 		Series<CookieSetting> cookieSettings = this.getResponse().getCookieSettings(); 
 		cookieSettings.clear();
 		this.setCookieSettings(cookieSettings);

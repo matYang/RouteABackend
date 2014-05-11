@@ -1,4 +1,4 @@
-package carpool.AdminModule.resources.adminResource;
+package carpool.AdminModule.resources;
 
 import org.restlet.ext.json.JsonRepresentation;
 import org.restlet.representation.Representation;
@@ -13,8 +13,7 @@ import carpool.HttpServer.configurations.EnumConfig.TransactionState;
 import carpool.HttpServer.configurations.EnumConfig.UserState;
 import carpool.HttpServer.dbservice.admin.AdminService;
 import carpool.HttpServer.exception.PseudoException;
-import carpool.AdminModule.resources.PseudoResource;
-
+import carpool.HttpServer.resources.PseudoResource;
 
 
 public class AdminStateChangeResource extends PseudoResource{

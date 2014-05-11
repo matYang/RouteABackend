@@ -17,7 +17,7 @@ import carpool.HttpServer.exception.PseudoException;
 import carpool.HttpServer.exception.location.LocationNotFoundException;
 import carpool.HttpServer.factory.JSONFactory;
 import carpool.HttpServer.model.*;
-import carpool.UserModule.resources.PseudoResource;
+import carpool.HttpServer.resources.PseudoResource;
 
 
 

@@ -1,4 +1,4 @@
-package carpool.AdminModule.resources.adminResource;
+package carpool.AdminModule.resources;
 
 import java.util.ArrayList;
 
@@ -19,7 +19,7 @@ import carpool.HttpServer.exception.PseudoException;
 import carpool.HttpServer.factory.JSONFactory;
 import carpool.HttpServer.model.identityVerification.DriverVerification;
 import carpool.HttpServer.model.identityVerification.PassengerVerification;
-import carpool.AdminModule.resources.PseudoResource;
+import carpool.HttpServer.resources.PseudoResource;
 
 public class AdminVerificationResource extends PseudoResource {
 	
