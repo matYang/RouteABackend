@@ -4,6 +4,7 @@ import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
 import carpool.HttpServer.asyncTask.StoreSearchHistoryTask;
+import carpool.HttpServer.asyncTask.relayTask.EmailRelayTask;
 import carpool.HttpServer.asyncTask.relayTask.LetterRelayTask;
 import carpool.HttpServer.asyncTask.relayTask.NotificationRelayTask;
 import carpool.HttpServer.asyncTask.relayTask.SESRelayTask;
@@ -12,7 +13,7 @@ import carpool.HttpServer.interfaces.PseudoAsyncTask;
 
 public class ExecutorProvider {
 	private static final int threadPool_max_notifiaction = 15;
-	private static final int threadPool_max_email = 10;
+	private static final int threadPool_max_email = 15;
 	private static final int threadPool_max_letter = 15;
 	private static final int threadPool_max_sr = 10;
 	private static final ExecutorService notificationExecutor = Executors.newFixedThreadPool(threadPool_max_notifiaction);
@@ -25,7 +26,7 @@ public class ExecutorProvider {
 		if (task instanceof NotificationRelayTask){
 			notificationExecutor.submit(executableTask);
 		}
-		else if (task instanceof SESRelayTask){
+		else if (task instanceof SESRelayTask || task instanceof EmailRelayTask){
 			emailExecutor.submit(executableTask);
 		}
 		else if(task instanceof StoreSearchHistoryTask){

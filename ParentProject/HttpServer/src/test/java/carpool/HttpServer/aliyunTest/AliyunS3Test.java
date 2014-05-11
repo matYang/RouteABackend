@@ -39,7 +39,6 @@ public class AliyunS3Test {
 	}
 
 
-
 	@Test
 	public void testUploadImg() throws IOException{
 		CarpoolDaoBasic.clearBothDatabase();
