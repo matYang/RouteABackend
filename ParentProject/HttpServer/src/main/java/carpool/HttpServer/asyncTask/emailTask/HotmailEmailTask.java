@@ -1,9 +1,8 @@
-package carpool.HttpServer.asyncTask.relayTask;
+package carpool.HttpServer.asyncTask.emailTask;
 
 import java.io.UnsupportedEncodingException;
 import java.util.Date;
 import java.util.Properties;
-import java.util.Map.Entry;
 
 import javax.mail.Message;
 import javax.mail.MessagingException;
@@ -16,38 +15,20 @@ import javax.mail.internet.MimeMessage;
 import javax.mail.internet.MimeUtility;
 
 import carpool.HttpServer.common.DebugLog;
-import carpool.HttpServer.configurations.EmailConfig;
 import carpool.HttpServer.configurations.EnumConfig.EmailEvent;
-import carpool.HttpServer.interfaces.PseudoAsyncTask;
 
 
-public class EmailRelayTask implements PseudoAsyncTask{
+public class HotmailEmailTask extends PseudoEmailTask{
 
 	private static final String smtpServer = "smtp.live.com";
 	private static final String sender = "huaixuesheng@hotmail.com";
 	private static final String password = "password11";
 	
-	private String receiver;
-	private String subject;
-	private String body;
-
 	
-	public EmailRelayTask(String receiver, EmailEvent event, String payload){
-		this.receiver = receiver;
-		Entry<String, String> entry = EmailConfig.emailEventMap.get(event);
-		if (entry == null){
-			DebugLog.d("SESRelay Fatal: null entry from emailEventMap with given evt");
-			throw new RuntimeException();
-		}
-		this.subject = entry.getKey();
-		this.body = entry.getValue().replaceAll(EmailConfig.htmlTemplateURLTarget, payload);
+	public HotmailEmailTask(String receiver, EmailEvent event, String payload) {
+		super(receiver, event, payload);
 	}
-	
-	
 
-	public boolean execute(){
-		return send();
-	}
 
 
 	/**
@@ -56,6 +37,7 @@ public class EmailRelayTask implements PseudoAsyncTask{
 	 * @param body
 	 * Send an email
 	 **/
+	@Override
 	public boolean send(){
 		
 			Properties props = System.getProperties();
@@ -91,19 +73,7 @@ public class EmailRelayTask implements PseudoAsyncTask{
 					transport.close();
 				}
 				
-			} catch (AddressException e) {
-				e.printStackTrace();
-				DebugLog.d(e);
-				return false;
-			} catch (NoSuchProviderException e) {
-				e.printStackTrace();
-				DebugLog.d(e);
-				return false;
-			} catch (MessagingException e) {
-				e.printStackTrace();
-				DebugLog.d(e);
-				return false;
-			} catch (UnsupportedEncodingException e) {
+			} catch (MessagingException|UnsupportedEncodingException e) {
 				e.printStackTrace();
 				DebugLog.d(e);
 				return false;

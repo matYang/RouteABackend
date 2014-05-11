@@ -1,6 +1,5 @@
-package carpool.HttpServer.asyncTask.relayTask;
+package carpool.HttpServer.asyncTask.emailTask;
 
-import java.util.Map.Entry;
 import java.util.Properties;
 
 import javax.mail.Message;
@@ -12,32 +11,16 @@ import javax.mail.internet.MimeMessage;
 import carpool.HttpServer.common.DebugLog;
 import carpool.HttpServer.configurations.EmailConfig;
 import carpool.HttpServer.configurations.EnumConfig.EmailEvent;
-import carpool.HttpServer.interfaces.PseudoAsyncTask;
 
 
-public class SESRelayTask implements PseudoAsyncTask{
+public class SESEmailTask extends PseudoEmailTask{
 	
-	private String receiver;
-	private String subject;
-	private String body;
-
+	public SESEmailTask(String receiver, EmailEvent event, String payload) {
+		super(receiver, event, payload);
+	}
 	
-	public SESRelayTask(String receiver, EmailEvent event, String payload){
-		this.receiver = receiver;
-		Entry<String, String> entry = EmailConfig.emailEventMap.get(event);
-		if (entry == null){
-			DebugLog.d("SESRelay Fatal: null entry from emailEventMap with given evt");
-			throw new RuntimeException();
-		}
-		this.subject = entry.getKey();
-		this.body = entry.getValue().replaceAll(EmailConfig.htmlTemplateURLTarget, payload);
-	}
 
-	public boolean execute(){
-		return send();
-	}
-
-
+	@Override
 	public boolean send(){
 
 		try{

@@ -4,10 +4,10 @@ import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
 import carpool.HttpServer.asyncTask.StoreSearchHistoryTask;
-import carpool.HttpServer.asyncTask.relayTask.EmailRelayTask;
+import carpool.HttpServer.asyncTask.emailTask.HotmailEmailTask;
+import carpool.HttpServer.asyncTask.emailTask.SESEmailTask;
 import carpool.HttpServer.asyncTask.relayTask.LetterRelayTask;
 import carpool.HttpServer.asyncTask.relayTask.NotificationRelayTask;
-import carpool.HttpServer.asyncTask.relayTask.SESRelayTask;
 import carpool.HttpServer.interfaces.PseudoAsyncTask;
 
 
@@ -26,7 +26,7 @@ public class ExecutorProvider {
 		if (task instanceof NotificationRelayTask){
 			notificationExecutor.submit(executableTask);
 		}
-		else if (task instanceof SESRelayTask || task instanceof EmailRelayTask){
+		else if (task instanceof SESEmailTask || task instanceof HotmailEmailTask){
 			emailExecutor.submit(executableTask);
 		}
 		else if(task instanceof StoreSearchHistoryTask){

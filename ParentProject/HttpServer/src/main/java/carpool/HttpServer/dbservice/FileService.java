@@ -15,6 +15,9 @@ public class FileService {
 		if (ServerConfig.configurationMap.get("env").equals("prod")){
 			aliyunMain.createUserFile(userId);
 		}
+		else if (ServerConfig.configurationMap.get("env").equals("test")){
+			AwsMain.createUserFile(userId);
+		}
 		else{
 			AwsMain.createUserFile(userId);
 		}
@@ -24,6 +27,9 @@ public class FileService {
 		if (ServerConfig.configurationMap.get("env").equals("prod")){
 			aliyunMain.storeSearchHistory(sr, userId);
 		}
+		else if (ServerConfig.configurationMap.get("env").equals("test")){
+			AwsMain.storeSearchHistory(sr, userId);
+		}
 		else{
 			AwsMain.storeSearchHistory(sr, userId);
 		}
@@ -32,6 +38,9 @@ public class FileService {
 	public static boolean migrateAlltheUsersSearchHistory(){
 		if (ServerConfig.configurationMap.get("env").equals("prod")){
 			return aliyunMain.migrateAlltheUsersSearchHistory();
+		}
+		else if (ServerConfig.configurationMap.get("env").equals("test")){
+			return AwsMain.migrateAlltheUsersSearchHistory();
 		}
 		else{
 			return AwsMain.migrateAlltheUsersSearchHistory();
@@ -43,6 +52,9 @@ public class FileService {
 		if (ServerConfig.configurationMap.get("env").equals("prod")){
 			return aliyunMain.getUserSearchHistory(userId);
 		}
+		else if (ServerConfig.configurationMap.get("env").equals("test")){
+			return AwsMain.getUserSearchHistory(userId);
+		}
 		else{
 			return AwsMain.getUserSearchHistory(userId);
 		}
@@ -52,6 +64,9 @@ public class FileService {
 	public static String uploadUserProfileImg(int userId, File file, String baseFileName){
 		if (ServerConfig.configurationMap.get("env").equals("prod")){
 			return aliyunMain.uploadImg(userId, file, baseFileName, ServerConfig.AliyunProfileBucket);
+		}
+		else if (ServerConfig.configurationMap.get("env").equals("test")){
+			return AwsMain.uploadImg(userId, file, baseFileName,ServerConfig.ProfileBucket);
 		}
 		else{
 			return AwsMain.uploadImg(userId, file, baseFileName,ServerConfig.ProfileBucket);
@@ -63,6 +78,9 @@ public class FileService {
 		if (ServerConfig.configurationMap.get("env").equals("prod")){
 			return aliyunMain.uploadImg(userId, file, baseFileName, ServerConfig.DriverVerificationBucket);
 		}
+		else if (ServerConfig.configurationMap.get("env").equals("test")){
+			return AwsMain.uploadImg(userId, file, baseFileName,ServerConfig.DriverVerificationBucket);
+		}
 		else{
 			return AwsMain.uploadImg(userId, file, baseFileName,ServerConfig.DriverVerificationBucket);
 		}
@@ -72,6 +90,9 @@ public class FileService {
 		if (ServerConfig.configurationMap.get("env").equals("prod")){
 			return aliyunMain.uploadImg(userId, file, baseFileName, ServerConfig.PassengerVerificationBucket);
 		}
+		else if (ServerConfig.configurationMap.get("env").equals("test")){
+			return AwsMain.uploadImg(userId, file, baseFileName,ServerConfig.PassengerVerificationBucket);
+		}
 		else{
 			return AwsMain.uploadImg(userId, file, baseFileName,ServerConfig.PassengerVerificationBucket);
 		}
@@ -80,6 +101,9 @@ public class FileService {
 	public static String uploadPassengerVerificationLicenseBackImg(int userId, File file, String baseFileName){
 		if (ServerConfig.configurationMap.get("env").equals("prod")){
 			return aliyunMain.uploadImg(userId, file, baseFileName, ServerConfig.PassengerVerificationBucket);
+		}
+		else if (ServerConfig.configurationMap.get("env").equals("test")){
+			return AwsMain.uploadImg(userId, file, baseFileName,ServerConfig.PassengerVerificationBucket);
 		}
 		else{
 			return AwsMain.uploadImg(userId, file, baseFileName,ServerConfig.PassengerVerificationBucket);
