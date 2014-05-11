@@ -1,4 +1,4 @@
-package carpool.AdminModule.resources.adminResource;
+package carpool.AdminModule.resources;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -12,7 +12,7 @@ import org.restlet.resource.Get;
 import carpool.HttpServer.configurations.DatabaseConfig;
 import carpool.HttpServer.dbservice.admin.StatisticAnalysisOfDataService;
 import carpool.HttpServer.factory.JSONFactory;
-import carpool.AdminModule.resources.PseudoResource;
+import carpool.HttpServer.resources.PseudoResource;
 
 public class AdminStatResource extends PseudoResource{
 

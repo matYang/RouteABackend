@@ -12,7 +12,7 @@ import carpool.HttpServer.dbservice.UserDaoService;
 import carpool.HttpServer.exception.PseudoException;
 import carpool.HttpServer.factory.JSONFactory;
 import carpool.HttpServer.model.Letter;
-import carpool.UserModule.resources.PseudoResource;
+import carpool.HttpServer.resources.PseudoResource;
 
 public class UserUncheckedLetterResource extends PseudoResource{
 

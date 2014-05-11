@@ -13,7 +13,7 @@ import carpool.HttpServer.exception.auth.AccountAuthenticationException;
 import carpool.HttpServer.factory.JSONFactory;
 import carpool.HttpServer.model.User;
 import carpool.HttpServer.model.representation.UserSearchRepresentation;
-import carpool.UserModule.resources.PseudoResource;
+import carpool.HttpServer.resources.PseudoResource;
 
 public class UserSearchUserResource extends PseudoResource{
 	

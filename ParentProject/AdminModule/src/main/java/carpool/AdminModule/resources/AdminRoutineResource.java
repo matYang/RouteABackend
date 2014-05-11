@@ -1,4 +1,4 @@
-package carpool.AdminModule.resources.adminResource;
+package carpool.AdminModule.resources;
 
 import org.json.JSONObject;
 import org.restlet.data.Status;
@@ -9,7 +9,7 @@ import org.restlet.resource.Get;
 import carpool.HttpServer.configurations.EnumConfig;
 import carpool.HttpServer.configurations.EnumConfig.AdminRoutineAction;
 import carpool.HttpServer.dbservice.admin.AdminService;
-import carpool.AdminModule.resources.PseudoResource;
+import carpool.HttpServer.resources.PseudoResource;
 
 public class AdminRoutineResource extends PseudoResource{
 	

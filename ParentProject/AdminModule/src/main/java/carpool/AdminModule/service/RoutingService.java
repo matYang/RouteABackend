@@ -8,10 +8,10 @@ import org.restlet.routing.Router;
 
 import carpool.HttpServer.common.DebugLog;
 import carpool.HttpServer.configurations.ServerConfig;
-import carpool.AdminModule.resources.adminResource.AdminRoutineResource;
-import carpool.AdminModule.resources.adminResource.AdminStateChangeResource;
-import carpool.AdminModule.resources.adminResource.AdminStatResource;
-import carpool.AdminModule.resources.adminResource.AdminVerificationResource;
+import carpool.AdminModule.resources.AdminRoutineResource;
+import carpool.AdminModule.resources.AdminStatResource;
+import carpool.AdminModule.resources.AdminStateChangeResource;
+import carpool.AdminModule.resources.AdminVerificationResource;
 
 /**
  * This class is the collection of our routes, it is the only Application attached to the default host
