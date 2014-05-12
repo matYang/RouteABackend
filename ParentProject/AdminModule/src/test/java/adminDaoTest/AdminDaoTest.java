@@ -4,11 +4,11 @@ import static org.junit.Assert.*;
 
 import org.junit.Test;
 
-import carpool.AdminModule.accountModule.AdminAccount;
 import carpool.AdminModule.adminDAO.AdminAccountDAO;
 import carpool.AdminModule.configurations.EnumConfig.AdminPrivilege;
 import carpool.AdminModule.configurations.EnumConfig.AdminStatus;
 import carpool.AdminModule.exception.AdminAccountNotFound;
+import carpool.AdminModule.model.AdminAccount;
 import carpool.HttpServer.carpoolDAO.CarpoolDaoBasic;
 import carpool.HttpServer.common.DebugLog;
 import carpool.HttpServer.configurations.EnumConfig.Gender;

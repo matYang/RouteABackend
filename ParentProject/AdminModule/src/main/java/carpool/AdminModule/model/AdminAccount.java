@@ -1,5 +1,7 @@
-package carpool.AdminModule.accountModule;
+package carpool.AdminModule.model;
 
+
+import java.util.Calendar;
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -10,14 +12,25 @@ import carpool.HttpServer.configurations.EnumConfig.Gender;
 
 public class AdminAccount {
 
-	private String name;
+	
 	private String reference;
 	private String password;
-	private Gender gender;
 	private int accountId;
+	
 	private AdminPrivilege privilege;
 	private AdminStatus status;
+	
+	private String name;
+	private Gender gender;
 	private String address;
+	
+	private String phone;
+	private String email;
+	private Calendar birthday;
+	private String idNum;
+	private String imgPath;
+	private Calendar creationTime;
+	
 	
 	/*
 	 * for normal construction
