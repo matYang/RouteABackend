@@ -2,6 +2,8 @@ package adminDaoTest;
 
 import static org.junit.Assert.*;
 
+import java.util.Calendar;
+
 import org.junit.Test;
 
 import carpool.AdminModule.adminDAO.AdminAccountDAO;
@@ -10,6 +12,7 @@ import carpool.AdminModule.configurations.EnumConfig.AdminStatus;
 import carpool.AdminModule.exception.AdminAccountNotFound;
 import carpool.AdminModule.model.AdminAccount;
 import carpool.HttpServer.carpoolDAO.CarpoolDaoBasic;
+import carpool.HttpServer.common.DateUtility;
 import carpool.HttpServer.common.DebugLog;
 import carpool.HttpServer.configurations.EnumConfig.Gender;
 
@@ -24,7 +27,12 @@ public class AdminDaoTest {
 		Gender gender = Gender.male;
 		AdminPrivilege privilege = AdminPrivilege.business;
 		AdminStatus status = AdminStatus.activated;
-		AdminAccount aa = new AdminAccount(name,password,gender,privilege,status,address);
+		String phone = "123456";
+		String email = "sadf@route.ca";
+		Calendar birthday = DateUtility.getCurTimeInstance();
+		String idNum = "23423fsf_dsfsdf/.,lsdf2";
+		String imgPath = "dsfdsfdsew324sdfdsf24t34tretqwerwftgergt3r4423rfdsf";
+		AdminAccount aa = new AdminAccount(name,password,gender,privilege,status,address,phone,email,birthday,idNum,imgPath);
 		try{
 			AdminAccountDAO.addAdminAccountToDatabases(aa);
 		}catch(Exception ex){
@@ -43,7 +51,12 @@ public class AdminDaoTest {
 		Gender gender = Gender.male;
 		AdminPrivilege privilege = AdminPrivilege.business;
 		AdminStatus status = AdminStatus.activated;
-		AdminAccount aa = new AdminAccount(name,password,gender,privilege,status,address);
+		String phone = "123456";
+		String email = "sadf@route.ca";
+		Calendar birthday = DateUtility.getCurTimeInstance();
+		String idNum = "23423fsf_dsfsdf/.,lsdf2";
+		String imgPath = "dsfdsfdsew324sdfdsf24t34tretqwerwftgergt3r4423rfdsf";
+		AdminAccount aa = new AdminAccount(name,password,gender,privilege,status,address,phone,email,birthday,idNum,imgPath);
 		AdminAccount ac = null;
 		try{
 			ac = AdminAccountDAO.addAdminAccountToDatabases(aa);
@@ -85,7 +98,12 @@ public class AdminDaoTest {
 		Gender gender = Gender.male;
 		AdminPrivilege privilege = AdminPrivilege.business;
 		AdminStatus status = AdminStatus.activated;
-		AdminAccount aa = new AdminAccount(name,password,gender,privilege,status,address);
+		String phone = "123456";
+		String email = "sadf@route.ca";
+		Calendar birthday = DateUtility.getCurTimeInstance();
+		String idNum = "23423fsf_dsfsdf/.,lsdf2";
+		String imgPath = "dsfdsfdsew324sdfdsf24t34tretqwerwftgergt3r4423rfdsf";
+		AdminAccount aa = new AdminAccount(name,password,gender,privilege,status,address,phone,email,birthday,idNum,imgPath);
 		AdminAccount ac = null;
 		AdminAccount ac2 = null;
 		try{
@@ -120,7 +138,12 @@ public class AdminDaoTest {
 		Gender gender = Gender.male;
 		AdminPrivilege privilege = AdminPrivilege.business;
 		AdminStatus status = AdminStatus.activated;
-		AdminAccount aa = new AdminAccount(name,password,gender,privilege,status,address);
+		String phone = "123456";
+		String email = "sadf@route.ca";
+		Calendar birthday = DateUtility.getCurTimeInstance();
+		String idNum = "23423fsf_dsfsdf/.,lsdf2";
+		String imgPath = "dsfdsfdsew324sdfdsf24t34tretqwerwftgergt3r4423rfdsf";
+		AdminAccount aa = new AdminAccount(name,password,gender,privilege,status,address,phone,email,birthday,idNum,imgPath);
 		AdminAccount ac = null;
 		AdminAccount ac2 = null;
 		try{
