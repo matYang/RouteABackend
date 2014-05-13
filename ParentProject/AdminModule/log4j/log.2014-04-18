@@ -1,0 +1,16 @@
+2014-04-17 15:20:06,970 [main] INFO  carpool.HttpServer.common.DebugLog - ready to start
+2014-04-17 15:20:07,000 [main] INFO  carpool.HttpServer.common.DebugLog - initiaing router::RoutingService
+2014-04-17 15:20:07,005 [main] INFO  carpool.HttpServer.common.DebugLog - Excuting
+2014-04-17 15:24:55,834 [main] INFO  carpool.HttpServer.common.DebugLog - carpool.HttpServer.carpoolDAO.CarpoolDaoBasic got Exception! 
+java.sql.SQLException: Timeout of 10000ms encountered waiting for connection.
+	at com.zaxxer.hikari.HikariPool.getConnection(Unknown Source)
+	at com.zaxxer.hikari.HikariDataSource.getConnection(Unknown Source)
+	at carpool.HttpServer.carpoolDAO.CarpoolDaoBasic.getSQLConnection(CarpoolDaoBasic.java:68)
+	at carpool.HttpServer.carpoolDAO.CarpoolDaoLocation.isLocationPoolEmpty(CarpoolDaoLocation.java:32)
+	at carpool.HttpServer.dbservice.LocationDaoService.init(LocationDaoService.java:29)
+	at carpool.AdminModule.serverMain.ServerMain.main(ServerMain.java:77)
+2014-04-17 15:28:11,476 [main] INFO  carpool.HttpServer.common.DebugLog - Starting to load location data from file: LocationData.txt
+2014-04-17 15:28:11,477 [main] INFO  carpool.HttpServer.common.DebugLog - Location loaded succesfully
+2014-04-17 15:28:11,555 [main] INFO  carpool.HttpServer.common.DebugLog - ready to start
+2014-04-17 15:28:11,584 [main] INFO  carpool.HttpServer.common.DebugLog - initiaing router::RoutingService
+2014-04-17 15:28:11,589 [main] INFO  carpool.HttpServer.common.DebugLog - Excuting
