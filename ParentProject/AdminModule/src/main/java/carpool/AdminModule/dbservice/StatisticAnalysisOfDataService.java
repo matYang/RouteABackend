@@ -1,4 +1,4 @@
-package carpool.HttpServer.dbservice.admin;
+package carpool.AdminModule.dbservice;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;

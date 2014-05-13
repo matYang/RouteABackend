@@ -1,0 +1,50 @@
+2014-05-11 16:50:07,131 [main] INFO  carpool.HttpServer.common.DebugLog - Starting to load location data from file: src/main/resources/LocationData.txt
+2014-05-11 16:50:07,132 [main] INFO  carpool.HttpServer.common.DebugLog - Location loaded succesfully
+2014-05-11 16:50:07,302 [main] INFO  carpool.HttpServer.common.DebugLog - ready to start
+2014-05-11 16:50:07,342 [main] INFO  carpool.HttpServer.common.DebugLog - initiaing router::RoutingService
+2014-05-11 16:50:07,364 [main] INFO  carpool.HttpServer.common.DebugLog - Excuting
+2014-05-11 16:50:07,382 [Thread-5] INFO  carpool.HttpServer.common.DebugLog - ScheduledClean:: clean scheduled at 4:0:0
+2014-05-11 16:50:07,382 [Thread-5] INFO  carpool.HttpServer.common.DebugLog - ScheduledClean thread starting, cleaning at 4:30AM every day
+2014-05-11 16:53:24,998 [main] INFO  carpool.HttpServer.common.DebugLog - Starting to load location data from file: LocationData.txt
+2014-05-11 16:53:24,999 [main] INFO  carpool.HttpServer.common.DebugLog - Location loaded succesfully
+2014-05-11 16:53:25,189 [main] INFO  carpool.HttpServer.common.DebugLog - ready to start
+2014-05-11 16:53:25,230 [main] INFO  carpool.HttpServer.common.DebugLog - initiaing router::RoutingService
+2014-05-11 16:53:25,253 [main] INFO  carpool.HttpServer.common.DebugLog - Excuting
+2014-05-11 16:53:25,256 [Thread-5] INFO  carpool.HttpServer.common.DebugLog - ScheduledClean:: clean scheduled at 4:0:0
+2014-05-11 16:53:25,257 [Thread-5] INFO  carpool.HttpServer.common.DebugLog - ScheduledClean thread starting, cleaning at 4:30AM every day
+2014-05-11 16:54:48,405 [main] INFO  carpool.HttpServer.common.DebugLog - Starting to load location data from file: src/main/resources/LocationData.txt
+2014-05-11 16:54:48,406 [main] INFO  carpool.HttpServer.common.DebugLog - Location loaded succesfully
+2014-05-11 16:54:48,526 [main] INFO  carpool.HttpServer.common.DebugLog - ready to start
+2014-05-11 16:54:48,566 [main] INFO  carpool.HttpServer.common.DebugLog - initiaing router::RoutingService
+2014-05-11 16:54:48,586 [main] INFO  carpool.HttpServer.common.DebugLog - Excuting
+2014-05-11 16:54:48,590 [Thread-5] INFO  carpool.HttpServer.common.DebugLog - ScheduledClean:: clean scheduled at 4:0:0
+2014-05-11 16:54:48,590 [Thread-5] INFO  carpool.HttpServer.common.DebugLog - ScheduledClean thread starting, cleaning at 4:30AM every day
+2014-05-11 16:55:42,188 [main] INFO  carpool.HttpServer.common.DebugLog - Starting to load location data from file: LocationData.txt
+2014-05-11 16:55:42,190 [main] INFO  carpool.HttpServer.common.DebugLog - Location loaded succesfully
+2014-05-11 16:55:42,394 [main] INFO  carpool.HttpServer.common.DebugLog - ready to start
+2014-05-11 16:55:42,435 [main] INFO  carpool.HttpServer.common.DebugLog - initiaing router::RoutingService
+2014-05-11 16:55:42,456 [main] INFO  carpool.HttpServer.common.DebugLog - Excuting
+2014-05-11 16:55:42,459 [Thread-5] INFO  carpool.HttpServer.common.DebugLog - ScheduledClean:: clean scheduled at 4:0:0
+2014-05-11 16:55:42,459 [Thread-5] INFO  carpool.HttpServer.common.DebugLog - ScheduledClean thread starting, cleaning at 4:30AM every day
+2014-05-11 16:58:01,548 [main] INFO  carpool.HttpServer.common.DebugLog - Starting to load location data from file: LocationData.txt
+2014-05-11 16:58:01,549 [main] INFO  carpool.HttpServer.common.DebugLog - Location loaded succesfully
+2014-05-11 16:58:01,754 [main] INFO  carpool.HttpServer.common.DebugLog - ready to start
+2014-05-11 16:58:01,794 [main] INFO  carpool.HttpServer.common.DebugLog - initiaing router::RoutingService
+2014-05-11 16:58:01,815 [main] INFO  carpool.HttpServer.common.DebugLog - Excuting
+2014-05-11 16:58:01,819 [Thread-5] INFO  carpool.HttpServer.common.DebugLog - ScheduledClean:: clean scheduled at 4:0:0
+2014-05-11 16:58:01,819 [Thread-5] INFO  carpool.HttpServer.common.DebugLog - ScheduledClean thread starting, cleaning at 4:30AM every day
+2014-05-11 17:16:27,065 [main] INFO  carpool.HttpServer.common.DebugLog - ready to start
+2014-05-11 17:16:27,105 [main] INFO  carpool.HttpServer.common.DebugLog - initiaing router::RoutingService
+2014-05-11 17:16:27,141 [main] INFO  carpool.HttpServer.common.DebugLog - Excuting
+2014-05-11 17:16:27,145 [Thread-5] INFO  carpool.HttpServer.common.DebugLog - ScheduledClean:: clean scheduled at 4:0:0
+2014-05-11 17:16:27,145 [Thread-5] INFO  carpool.HttpServer.common.DebugLog - ScheduledClean thread starting, cleaning at 4:30AM every day
+2014-05-11 17:20:42,458 [main] INFO  carpool.HttpServer.common.DebugLog - ready to start
+2014-05-11 17:20:42,498 [main] INFO  carpool.HttpServer.common.DebugLog - initiaing router::RoutingService
+2014-05-11 17:20:42,519 [main] INFO  carpool.HttpServer.common.DebugLog - Excuting
+2014-05-11 17:20:42,523 [Thread-5] INFO  carpool.HttpServer.common.DebugLog - ScheduledClean:: clean scheduled at 4:0:0
+2014-05-11 17:20:42,523 [Thread-5] INFO  carpool.HttpServer.common.DebugLog - ScheduledClean thread starting, cleaning at 4:30AM every day
+2014-05-11 17:22:00,228 [main] INFO  carpool.HttpServer.common.DebugLog - ready to start
+2014-05-11 17:22:00,267 [main] INFO  carpool.HttpServer.common.DebugLog - initiaing router::RoutingService
+2014-05-11 17:22:00,286 [main] INFO  carpool.HttpServer.common.DebugLog - Excuting
+2014-05-11 17:22:00,289 [Thread-5] INFO  carpool.HttpServer.common.DebugLog - ScheduledClean:: clean scheduled at 4:0:0
+2014-05-11 17:22:00,290 [Thread-5] INFO  carpool.HttpServer.common.DebugLog - ScheduledClean thread starting, cleaning at 4:30AM every day

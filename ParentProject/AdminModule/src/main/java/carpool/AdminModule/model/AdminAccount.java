@@ -10,8 +10,12 @@ import carpool.AdminModule.configurations.EnumConfig.AdminPrivilege;
 import carpool.AdminModule.configurations.EnumConfig.AdminStatus;
 import carpool.HttpServer.common.DateUtility;
 import carpool.HttpServer.configurations.EnumConfig.Gender;
+import carpool.HttpServer.exception.validation.ValidationException;
+import carpool.HttpServer.interfaces.PseudoModel;
+import carpool.HttpServer.interfaces.PseudoValidatable;
+import carpool.HttpServer.model.User;
 
-public class AdminAccount {
+public class AdminAccount implements PseudoModel, PseudoValidatable, Comparable<AdminAccount>{
 
 
 	private String reference;
@@ -214,5 +218,16 @@ public class AdminAccount {
 				this.getPhone().equals(account.getPhone())&&this.getEmail().equals(account.getEmail())&&this.getIdNum().equals(account.getIdNum())&&
 				this.getBirthday().getTime().toString().equals(account.getBirthday().getTime().toString())&&this.getImgPath().equals(account.getImgPath())&&
 				this.getCreationTime().getTime().toString().equals(account.getCreationTime().getTime().toString());
+	}
+
+
+	@Override
+	public boolean validate() throws ValidationException {
+		return this.status == AdminStatus.activated;
+	}
+
+	@Override
+	public int compareTo(AdminAccount o) {
+		return this.accountId - o.accountId;
 	}
 }

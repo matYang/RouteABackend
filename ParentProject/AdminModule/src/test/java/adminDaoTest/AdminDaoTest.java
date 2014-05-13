@@ -2,6 +2,7 @@ package adminDaoTest;
 
 import static org.junit.Assert.*;
 
+import java.util.ArrayList;
 import java.util.Calendar;
 
 import org.junit.Test;
@@ -87,6 +88,41 @@ public class AdminDaoTest {
 		}else{
 			fail();
 		}
+
+		AdminAccount ac4 = AdminAccountDAO.getAdminAccountByEmail(email);
+		if(ac4.equals(ac)){
+			//Passed;
+		}else{
+			fail();
+		}
+
+		String name2 = "Matt";
+		String address2 = "jjburst";
+		String password2 = "sdfr";
+		Gender gender2 = Gender.both;
+		AdminPrivilege privilege2 = AdminPrivilege.economy;
+		AdminStatus status2 = AdminStatus.activated;
+		String phone2 = "1345677";
+		String email2 = "admin@route.ca";
+		Calendar birthday2 = DateUtility.getCurTimeInstance();
+		String idNum2 = "23dsfgg4_dsfsdf/.,lsdf2";
+		String imgPath2 = "dsfdsfdse48434324553453453452dfgefg4ergt34tretqwerwftgergt3r4423rfdsf";
+		AdminAccount aa2 = new AdminAccount(name2,password2,gender2,privilege2,status2,address2,phone2,email2,birthday2,idNum2,imgPath2);
+		try{
+			ac2 = AdminAccountDAO.addAdminAccountToDatabases(aa2);
+		}catch(Exception ex){
+			ex.printStackTrace();
+			DebugLog.d(ex);
+			fail();
+		}
+
+		ArrayList<AdminAccount> alist = new ArrayList<AdminAccount>();
+		alist = AdminAccountDAO.getAllAdminAccounts();
+		if(alist.size() == 2 && alist.get(0).equals(ac) && alist.get(1).equals(ac2)){
+			//Passed;
+		}else{
+			fail();
+		}
 	}
 
 	@Test
@@ -168,7 +204,7 @@ public class AdminDaoTest {
 			fail();
 		}
 
-		AdminAccountDAO.deleteAdminAccountFromDatabases(ac);
+		AdminAccountDAO.deleteAdminAccountFromDatabases(ac.getAccountId());
 		try{
 			AdminAccountDAO.getAdminAccountFromDatabases(ac.getAccountId());
 		}catch(Exception ex){

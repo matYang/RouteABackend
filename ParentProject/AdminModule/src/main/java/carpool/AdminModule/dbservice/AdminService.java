@@ -1,4 +1,4 @@
-package carpool.HttpServer.dbservice.admin;
+package carpool.AdminModule.dbservice;
 
 import java.util.ArrayList;
 import java.util.Calendar;

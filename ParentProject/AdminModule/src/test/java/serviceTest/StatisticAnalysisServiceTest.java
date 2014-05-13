@@ -1,4 +1,4 @@
-package carpool.HttpServer.serviceTest;
+package serviceTest;
 
 import static org.junit.Assert.fail;
 
@@ -10,6 +10,7 @@ import java.util.TimeZone;
 
 import org.junit.Test;
 
+import carpool.AdminModule.dbservice.StatisticAnalysisOfDataService;
 import carpool.HttpServer.aws.*;
 import carpool.HttpServer.carpoolDAO.CarpoolDaoBasic;
 import carpool.HttpServer.carpoolDAO.CarpoolDaoMessage;
@@ -21,7 +22,6 @@ import carpool.HttpServer.configurations.EnumConfig.DayTimeSlot;
 import carpool.HttpServer.configurations.EnumConfig.Gender;
 import carpool.HttpServer.configurations.EnumConfig.MessageType;
 import carpool.HttpServer.configurations.EnumConfig.PaymentMethod;
-import carpool.HttpServer.dbservice.admin.StatisticAnalysisOfDataService;
 import carpool.HttpServer.exception.location.LocationNotFoundException;
 import carpool.HttpServer.exception.validation.ValidationException;
 import carpool.HttpServer.model.Location;

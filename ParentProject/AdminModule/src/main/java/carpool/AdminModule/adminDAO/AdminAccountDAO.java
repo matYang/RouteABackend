@@ -5,19 +5,17 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
-
+import java.util.ArrayList;
 import org.apache.commons.lang3.RandomStringUtils;
 import carpool.AdminModule.configurations.EnumConfig.AdminPrivilege;
 import carpool.AdminModule.configurations.EnumConfig.AdminStatus;
 import carpool.AdminModule.exception.AdminAccountNotFound;
 import carpool.AdminModule.model.AdminAccount;
-
 import carpool.HttpServer.carpoolDAO.CarpoolDaoBasic;
 import carpool.HttpServer.common.DateUtility;
 import carpool.HttpServer.common.DebugLog;
 import carpool.HttpServer.configurations.EnumConfig.Gender;
 import carpool.HttpServer.configurations.ServerConfig;
-
 
 public class AdminAccountDAO {
 
@@ -100,20 +98,48 @@ public class AdminAccountDAO {
 		}	
 	}
 
-	public static void deleteAdminAccountFromDatabases(AdminAccount adminacc){
+	public static void deleteAdminAccountFromDatabases(int id){
 		String query = "DELETE from adminAccount where accountId = ?";
 		PreparedStatement stmt = null;
 		Connection conn = null;
 		try{
 			conn = CarpoolDaoBasic.getSQLConnection();
 			stmt = conn.prepareStatement(query);
-			stmt.setInt(1, adminacc.getAccountId());
+			stmt.setInt(1, id);
 			stmt.executeUpdate();	
 		}catch (SQLException e) {
 			DebugLog.d(e);
 		}finally  {
 			CarpoolDaoBasic.closeResources(conn, stmt, null,true);
 		} 
+	}
+
+	public static AdminAccount getAdminAccountByEmail(String email) throws AdminAccountNotFound{
+
+		String query = "SELECT * FROM adminAccount where email = ?";
+
+		PreparedStatement stmt = null;
+		Connection conn = null;
+		ResultSet rs = null;
+		AdminAccount adminacc = null;
+		try{
+			conn = CarpoolDaoBasic.getSQLConnection();
+			stmt = conn.prepareStatement(query);
+			stmt.setString(1, email);
+			rs = stmt.executeQuery();
+			if(rs.next()){
+				adminacc = createAdminAccountByResultSet(rs);
+			}else{
+				throw new AdminAccountNotFound();
+			}
+		}catch(SQLException e){
+			e.printStackTrace();
+			DebugLog.d(e);
+		}finally  {
+			CarpoolDaoBasic.closeResources(conn, stmt, rs,true);
+		}	
+		return adminacc;
+
 	}
 
 	public static AdminAccount getAdminAccountFromDatabases(String reference) throws AdminAccountNotFound{
@@ -168,6 +194,29 @@ public class AdminAccountDAO {
 			CarpoolDaoBasic.closeResources(conn, stmt, rs,true);
 		}	
 		return adminacc;
+	}
+
+	public static ArrayList<AdminAccount> getAllAdminAccounts(){
+		String query = "SELECT * FROM AdminAccount";
+		ArrayList<AdminAccount> admins = new ArrayList<AdminAccount>();
+
+		PreparedStatement stmt = null;
+		Connection conn = null;
+		ResultSet rs = null;
+		try{
+			conn = CarpoolDaoBasic.getSQLConnection();
+			stmt = conn.prepareStatement(query);
+
+			rs = stmt.executeQuery();
+			while(rs.next()){
+				admins.add(createAdminAccountByResultSet(rs));
+			}
+		}catch(SQLException e){
+			DebugLog.d(e);
+		}finally  {
+			CarpoolDaoBasic.closeResources(conn, stmt, rs,true);
+		} 
+		return admins;
 	}
 
 	private static AdminAccount createAdminAccountByResultSet(ResultSet rs) throws SQLException {
