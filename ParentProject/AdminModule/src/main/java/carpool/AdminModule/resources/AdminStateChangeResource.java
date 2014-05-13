@@ -11,7 +11,7 @@ import carpool.HttpServer.configurations.EnumConfig;
 import carpool.HttpServer.configurations.EnumConfig.MessageState;
 import carpool.HttpServer.configurations.EnumConfig.TransactionState;
 import carpool.HttpServer.configurations.EnumConfig.UserState;
-import carpool.HttpServer.dbservice.admin.AdminService;
+import carpool.AdminModule.dbservice.AdminService;
 import carpool.HttpServer.exception.PseudoException;
 import carpool.HttpServer.resources.PseudoResource;
 

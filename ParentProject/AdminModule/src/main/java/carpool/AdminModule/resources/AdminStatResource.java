@@ -10,7 +10,7 @@ import org.restlet.representation.Representation;
 import org.restlet.resource.Get;
 
 import carpool.HttpServer.configurations.DatabaseConfig;
-import carpool.HttpServer.dbservice.admin.StatisticAnalysisOfDataService;
+import carpool.AdminModule.dbservice.StatisticAnalysisOfDataService;
 import carpool.HttpServer.factory.JSONFactory;
 import carpool.HttpServer.resources.PseudoResource;
 

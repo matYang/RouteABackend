@@ -14,7 +14,7 @@ import org.restlet.resource.Post;
 import carpool.HttpServer.common.DateUtility;
 import carpool.HttpServer.configurations.EnumConfig;
 import carpool.HttpServer.configurations.EnumConfig.VerificationType;
-import carpool.HttpServer.dbservice.admin.AdminService;
+import carpool.AdminModule.dbservice.AdminService;
 import carpool.HttpServer.exception.PseudoException;
 import carpool.HttpServer.factory.JSONFactory;
 import carpool.HttpServer.model.identityVerification.DriverVerification;

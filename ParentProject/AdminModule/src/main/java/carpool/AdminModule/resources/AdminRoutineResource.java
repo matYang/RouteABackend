@@ -6,9 +6,9 @@ import org.restlet.ext.json.JsonRepresentation;
 import org.restlet.representation.Representation;
 import org.restlet.resource.Get;
 
+import carpool.AdminModule.dbservice.AdminService;
 import carpool.HttpServer.configurations.EnumConfig;
 import carpool.HttpServer.configurations.EnumConfig.AdminRoutineAction;
-import carpool.HttpServer.dbservice.admin.AdminService;
 import carpool.HttpServer.resources.PseudoResource;
 
 public class AdminRoutineResource extends PseudoResource{
