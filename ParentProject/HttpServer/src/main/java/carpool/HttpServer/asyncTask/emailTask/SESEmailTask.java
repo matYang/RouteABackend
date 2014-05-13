@@ -49,6 +49,7 @@ public class SESEmailTask extends PseudoEmailTask{
 			} catch (Exception e) {
 				e.printStackTrace();
 				DebugLog.d(e);
+				return false;
 			} finally{
 				transport.close();        	
 			}
@@ -56,6 +57,7 @@ public class SESEmailTask extends PseudoEmailTask{
 		}catch (Exception e) {
 			e.printStackTrace();
 			DebugLog.d(e);
+			return false;
 		}
 		
 		return true;

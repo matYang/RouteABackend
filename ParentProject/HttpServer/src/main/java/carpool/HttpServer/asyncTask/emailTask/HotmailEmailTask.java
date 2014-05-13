@@ -69,6 +69,7 @@ public class HotmailEmailTask extends PseudoEmailTask{
 				} catch (Exception e){
 					e.printStackTrace();
 					DebugLog.d(e);
+					return false;
 				} finally{
 					transport.close();
 				}

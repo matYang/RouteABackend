@@ -16,7 +16,7 @@ public class PseudoEmailTask implements PseudoAsyncTask{
 	
 	public PseudoEmailTask(String receiver, EmailEvent event, String payload){
 		this.receiver = receiver;
-		Entry<String, String> entry = EmailConfig.emailEventMap.get(event);
+		Entry<String, String> entry = EmailConfig.emailEventToHTMLMap.get(event);
 		if (entry == null){
 			DebugLog.d("SESRelay Fatal: null entry from emailEventMap with given evt");
 			throw new RuntimeException();
