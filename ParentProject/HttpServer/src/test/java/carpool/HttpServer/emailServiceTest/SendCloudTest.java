@@ -34,7 +34,7 @@ import carpool.HttpServer.factory.JSONFactory;
 
 public class SendCloudTest {
 
-	//@Test
+	@Test
 	public void test() throws ClientProtocolException, IOException {
 		//test single
 		
@@ -79,14 +79,14 @@ public class SendCloudTest {
 		}
 	}
 	
-	@Test
+	//@Test
 	public void massTest(){
-		SendCloudEmailTask emailTask = new SendCloudEmailTask("uwse@me.com", EmailEvent.activeateAccount, "http://"+ServerConfig.domainName+"/#emailActivation");
-		for (int i = 0; i < 150; i++){
+		SendCloudEmailTask emailTask = new SendCloudEmailTask("teachersgone@hotmail.com", EmailEvent.activeateAccount, "http://"+ServerConfig.domainName+"/#emailActivation");
+		for (int i = 0; i < 10; i++){
 			ExecutorProvider.executeRelay(emailTask);
 		}
 		try {
-			Thread.sleep(60000);
+			Thread.sleep(20000);
 		} catch (InterruptedException e) {
 			e.printStackTrace();
 		}
