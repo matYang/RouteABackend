@@ -3,6 +3,7 @@ package carpool.HttpServer.dbservice;
 import java.util.ArrayList;
 import java.util.HashMap;
 import carpool.HttpServer.carpoolDAO.CarpoolDaoLocation;
+import carpool.HttpServer.configurations.ServerConfig;
 import carpool.HttpServer.exception.location.LocationException;
 import carpool.HttpServer.exception.location.LocationNotFoundException;
 import carpool.HttpServer.exception.validation.ValidationException;
@@ -22,7 +23,7 @@ public class LocationDaoService {
 		if (!CarpoolDaoLocation.isLocationPoolEmpty()){
 			return;
 		}		
-		ArrayList<HashMap<String, String>> bufferList = CarpoolLocationLoader.loadLocationFromFile("LocationData.txt");
+		ArrayList<HashMap<String, String>> bufferList = CarpoolLocationLoader.loadLocationFromFile(ServerConfig.resourcePrefix + "LocationData.txt");
 		defalutLocationsNum = bufferList.size();
 		for (HashMap<String, String> bufferMap : bufferList){
 

@@ -1,7 +1,12 @@
 package carpool.HttpServer.dbservice;
 
+import carpool.HttpServer.aliyun.AliyunMain;
 import carpool.HttpServer.asyncRelayExecutor.ExecutorProvider;
-import carpool.HttpServer.asyncTask.relayTask.SESRelayTask;
+import carpool.HttpServer.asyncTask.emailTask.HotmailEmailTask;
+import carpool.HttpServer.asyncTask.emailTask.PseudoEmailTask;
+import carpool.HttpServer.asyncTask.emailTask.SESEmailTask;
+import carpool.HttpServer.asyncTask.emailTask.SendCloudEmailTask;
+import carpool.HttpServer.aws.AwsMain;
 import carpool.HttpServer.common.DebugLog;
 import carpool.HttpServer.configurations.ServerConfig;
 import carpool.HttpServer.configurations.EnumConfig.EmailEvent;
@@ -10,34 +15,11 @@ import carpool.HttpServer.encryption.EmailCrypto;
 import carpool.HttpServer.exception.location.LocationNotFoundException;
 import carpool.HttpServer.exception.user.UserNotFoundException;
 import carpool.HttpServer.factory.AuthFactory;
+import carpool.HttpServer.factory.JSONFactory;
 import carpool.HttpServer.model.User;
 
 public class EmailDaoService {
 
-	/**
-	 * changes the user's email
-	 * 1st: change user's email to newEmail, emailAcvtivated  to false in database, clear userSession in Redis
-	 * 2nd: send an activation email to the new Email address
-	 * @param userId
-	 * @param newEmail
-	 * @param sessionString
-	 * @return return false if error occurs, eg inside the catch clause
-	 * @throws user not found exception if the user id does not exist
-	 */
-//	public static boolean changeEmail(int userId, String newEmail, String sessionString) throws UserNotFoundException{
-//		try {
-//			User user = CarpoolDaoUser.getUserById(userId);
-//			user.setEmail(newEmail);
-//			user.setEmailActivated(false);
-//			CarpoolDaoUser.UpdateUserInDatabase(user);
-//			AuthDaoService.closeUserSession(sessionString);
-//			EmailDaoService.sendActivationEmail(userId, newEmail);
-//			return true;
-//		} catch (Exception e) {
-//			DebugLog.d(e);
-//		}
-//		return false;
-//	}
 
 	/**
 	 * @param newEmail  the new email that an activation email should be sent to
@@ -50,7 +32,19 @@ public class EmailDaoService {
 		String encryptedEmailKey = EmailCrypto.encrypt(userId, authCode);
 		
 		try {
-			SESRelayTask emailTask = new SESRelayTask(newEmail, EmailEvent.activeateAccount, "http://"+ServerConfig.domainName+"/#emailActivation/"+encryptedEmailKey);
+			/*
+			PseudoEmailTask emailTask;
+			if (ServerConfig.configurationMap.get("env").equals("prod")){
+				emailTask = new HotmailEmailTask(newEmail, EmailEvent.activeateAccount, "http://"+ServerConfig.domainName+"/#emailActivation/"+encryptedEmailKey);
+			}
+			else if (ServerConfig.configurationMap.get("env").equals("test")){
+				emailTask = new SESEmailTask(newEmail, EmailEvent.activeateAccount, "http://"+ServerConfig.domainName+"/#emailActivation/"+encryptedEmailKey);
+			}
+			else{
+				emailTask = new HotmailEmailTask(newEmail, EmailEvent.activeateAccount, "http://"+ServerConfig.domainName+"/#emailActivation/"+encryptedEmailKey);
+			}
+			*/
+			SendCloudEmailTask emailTask = new SendCloudEmailTask(newEmail, EmailEvent.activeateAccount, "http://"+ServerConfig.domainName+"/#emailActivation/"+encryptedEmailKey);
 			ExecutorProvider.executeRelay(emailTask);
 		} catch (Exception e) {
 			DebugLog.d(e);
@@ -118,13 +112,21 @@ public class EmailDaoService {
 			String authCode = AuthFactory.forgetPassword_setAuthCode(userId);
 			
 			String encryptedEmailKey = EmailCrypto.encrypt(userId, authCode);
-			SESRelayTask eTask = new SESRelayTask(email, EmailEvent.forgotPassword, ServerConfig.domainName+"/#forgetPassword/"+encryptedEmailKey);
-			ExecutorProvider.executeRelay(eTask);
+			
+			SendCloudEmailTask emailTask = new SendCloudEmailTask(email, EmailEvent.forgotPassword, ServerConfig.domainName+"/#forgetPassword/"+encryptedEmailKey);
+			ExecutorProvider.executeRelay(emailTask);
 			return true;
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
 		return false;
+	}
+	
+	//TODO currently not sending the notification text
+	public static boolean sendNotificationEmail(String email, String notificationText){
+		SendCloudEmailTask emailTask = new SendCloudEmailTask(email, EmailEvent.notification, "");
+		ExecutorProvider.executeRelay(emailTask);
+		return true;
 	}
 
 	public static boolean isEmailAvailable(String email) throws LocationNotFoundException{

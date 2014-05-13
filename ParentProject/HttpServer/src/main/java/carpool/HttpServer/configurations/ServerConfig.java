@@ -103,4 +103,6 @@ public class ServerConfig {
 	public static final String AliyunDriverVerificationBucket = "driververification";
 	public static final String AliyunPassengerVerificationBucket = "passengerverification";
 	
+	public static final int AdminRefLength = 6;
+	public static final String resourcePrefix = "src/main/resources/";
 }

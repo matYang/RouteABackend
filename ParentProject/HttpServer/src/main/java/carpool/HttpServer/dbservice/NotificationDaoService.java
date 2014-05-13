@@ -5,8 +5,8 @@ import java.util.*;
 import java.util.Map.Entry;
 
 import carpool.HttpServer.asyncRelayExecutor.ExecutorProvider;
+import carpool.HttpServer.asyncTask.emailTask.SESEmailTask;
 import carpool.HttpServer.asyncTask.relayTask.NotificationRelayTask;
-import carpool.HttpServer.asyncTask.relayTask.SESRelayTask;
 import carpool.HttpServer.carpoolDAO.CarpoolDaoNotification;
 import carpool.HttpServer.common.*;
 import carpool.HttpServer.configurations.EnumConfig.EmailEvent;
@@ -48,9 +48,7 @@ public class NotificationDaoService{
 			try {
 				User user = UserDaoService.getUserById(entry.getKey(),connections);
 				if (user.isEmailNotice()){
-					//TODO
-					SESRelayTask eTask = new SESRelayTask(user.getEmail(), EmailEvent.notification, JSONFactory.toJSON(entry.getValue()).toString());
-					ExecutorProvider.executeRelay(eTask);
+					EmailDaoService.sendNotificationEmail(user.getEmail(), JSONFactory.toJSON(entry.getValue()).toString());
 				}
 			} catch (UserNotFoundException | LocationNotFoundException e) {
 				DebugLog.d(e);

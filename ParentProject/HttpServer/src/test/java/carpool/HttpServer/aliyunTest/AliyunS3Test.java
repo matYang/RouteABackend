@@ -11,7 +11,7 @@ import org.junit.Test;
 
 import redis.clients.jedis.Jedis;
 
-import carpool.HttpServer.aliyun.aliyunMain;
+import carpool.HttpServer.aliyun.AliyunMain;
 import carpool.HttpServer.carpoolDAO.CarpoolDaoBasic;
 import carpool.HttpServer.carpoolDAO.CarpoolDaoMessage;
 import carpool.HttpServer.carpoolDAO.CarpoolDaoUser;
@@ -35,9 +35,8 @@ public class AliyunS3Test {
 	@Test
 	public void testCreateUserFile(){
 		int userId = 1;
-		aliyunMain.createUserFile(userId);		
+		AliyunMain.createUserFile(userId);		
 	}
-
 
 
 	@Test
@@ -48,7 +47,7 @@ public class AliyunS3Test {
 		String imgSize = ImageConfig.imgSize_m;
 		String imgName = userProfile+imgSize+userId;
 		File file = new File(ServerConfig.pathToSearchHistoryFolder+imgName+".png");
-		aliyunMain.uploadImg(userId, file, imgName, ServerConfig.AliyunProfileBucket,false);
+		AliyunMain.uploadImg(userId, file, imgName, ServerConfig.AliyunProfileBucket,false);
 	}
 
 	@Test
@@ -117,51 +116,51 @@ public class AliyunS3Test {
 		int upper = DatabaseConfig.redisSearchHistoryUpbound;
 		//For this test, we set the upper to be 6
 
-		aliyunMain.storeSearchHistory(SR, userId);			
-		aliyunMain.storeSearchHistory(SR2, userId);
-		aliyunMain.storeSearchHistory(SR3, userId);
-		aliyunMain.storeSearchHistory(SR4, userId);
-		aliyunMain.storeSearchHistory(SR5, userId);
+		AliyunMain.storeSearchHistory(SR, userId);			
+		AliyunMain.storeSearchHistory(SR2, userId);
+		AliyunMain.storeSearchHistory(SR3, userId);
+		AliyunMain.storeSearchHistory(SR4, userId);
+		AliyunMain.storeSearchHistory(SR5, userId);
 		if(redis.lrange(rediskey, 0,upper).size()==5){
 			//Pass
 		}else{
 			fail();
 		}
-		aliyunMain.storeSearchHistory(SR5, userId);
+		AliyunMain.storeSearchHistory(SR5, userId);
 
-		aliyunMain.storeSearchHistory(SR5, userId);
+		AliyunMain.storeSearchHistory(SR5, userId);
 		if(redis.lrange(rediskey, 0,upper).size()==1){
 			//Pass
 		}else{
 			fail();
 		}
-		aliyunMain.storeSearchHistory(SR5, userId);
+		AliyunMain.storeSearchHistory(SR5, userId);
 		if(redis.lrange(rediskey, 0,upper).size()==2){
 			//Pass
 		}else{
 			fail();
 		}
-		aliyunMain.storeSearchHistory(SR5, userId);
+		AliyunMain.storeSearchHistory(SR5, userId);
 		if(redis.lrange(rediskey, 0,upper).size()==3){
 			//Pass
 		}else{
 			fail();
 		}
-		aliyunMain.storeSearchHistory(SR5, userId);
+		AliyunMain.storeSearchHistory(SR5, userId);
 		if(redis.lrange(rediskey, 0,upper).size()==4){
 			//Pass
 		}else{
 			fail();
 		}
-		aliyunMain.storeSearchHistory(SR5, userId);
+		AliyunMain.storeSearchHistory(SR5, userId);
 		if(redis.lrange(rediskey, 0,upper).size()==5){
 			//Pass
 		}else{
 			fail();
 		}
-		aliyunMain.storeSearchHistory(SR5, userId);
+		AliyunMain.storeSearchHistory(SR5, userId);
 
-		aliyunMain.storeSearchHistory(SR5, userId);
+		AliyunMain.storeSearchHistory(SR5, userId);
 		if(redis.lrange(rediskey, 0,upper).size()==1){
 			//Pass
 		}else{
@@ -174,7 +173,7 @@ public class AliyunS3Test {
 		redis.lpush(rediskey, SR4.toSerializedString());
 		redis.lpush(rediskey, SR5.toSerializedString());
 		redis.lpush(rediskey, SR6.toSerializedString());
-		aliyunMain.storeSearchHistory(SR5, userId);
+		AliyunMain.storeSearchHistory(SR5, userId);
 		
 		if(redis.lrange(rediskey, 0,upper).size()==0){
 			//Pass
@@ -246,35 +245,35 @@ public class AliyunS3Test {
 		SearchRepresentation SR6 = new SearchRepresentation(false,dm2,am2,dt2,at2,type,timeSlot3,timeSlot3);
 		// In this case, we use 6 to be the upper bound
 		ArrayList<SearchRepresentation> list = new ArrayList<SearchRepresentation>();
-		int pre = aliyunMain.getUserSearchHistory(userId).size();
+		int pre = AliyunMain.getUserSearchHistory(userId).size();
 
-		aliyunMain.storeSearchHistory(SR, userId);
-		aliyunMain.storeSearchHistory(SR2, userId);
-		aliyunMain.storeSearchHistory(SR3, userId);
-		aliyunMain.storeSearchHistory(SR4, userId);
-		aliyunMain.storeSearchHistory(SR5, userId);
+		AliyunMain.storeSearchHistory(SR, userId);
+		AliyunMain.storeSearchHistory(SR2, userId);
+		AliyunMain.storeSearchHistory(SR3, userId);
+		AliyunMain.storeSearchHistory(SR4, userId);
+		AliyunMain.storeSearchHistory(SR5, userId);
 
 		String rediskey = DatabaseConfig.redisSearchHistoryPrefix+userId;
 		int upper = DatabaseConfig.redisSearchHistoryUpbound;
 		Jedis jedis = CarpoolDaoBasic.getJedis();
 		int storage = jedis.lrange(rediskey, 0, upper-1).size();
 		CarpoolDaoBasic.returnJedis(jedis);
-		list = aliyunMain.getUserSearchHistory(userId);
+		list = AliyunMain.getUserSearchHistory(userId);
 		if(list.size()==(pre+storage)){
 			//Passed;
 		}else{
 			fail();
 		}
-		aliyunMain.storeSearchHistory(SR6, userId);
-		list = aliyunMain.getUserSearchHistory(userId);
+		AliyunMain.storeSearchHistory(SR6, userId);
+		list = AliyunMain.getUserSearchHistory(userId);
 		if(list.size()==(pre+storage+1)){
 			//Passed;			
 		}else{			
 			fail();
 		}
 
-		aliyunMain.storeSearchHistory(SR6, userId);
-		list = aliyunMain.getUserSearchHistory(userId);
+		AliyunMain.storeSearchHistory(SR6, userId);
+		list = AliyunMain.getUserSearchHistory(userId);
 		if(list.size()==(pre+storage+2)){
 			//Passed;			
 		}else{			
@@ -358,23 +357,23 @@ public class AliyunS3Test {
 
 		ArrayList<SearchRepresentation> list = new ArrayList<SearchRepresentation>();
 
-		aliyunMain.storeSearchHistory(SR, userId);
-		aliyunMain.storeSearchHistory(SR2, userId2);//user2
-		aliyunMain.storeSearchHistory(SR3, userId);
-		aliyunMain.storeSearchHistory(SR4, userId2);//user2
-		aliyunMain.storeSearchHistory(SR5, userId);
-		aliyunMain.storeSearchHistory(SR6, userId2);//user2
-		aliyunMain.storeSearchHistory(SR7, userId);
-		aliyunMain.storeSearchHistory(SR8, userId2);//user2
-		aliyunMain.storeSearchHistory(SR9, userId);
-		aliyunMain.storeSearchHistory(SR10, userId2);//user2
-		aliyunMain.storeSearchHistory(SR11, userId);
-		aliyunMain.storeSearchHistory(SR12, userId2);//user2
-		aliyunMain.storeSearchHistory(SR13, userId);
-		aliyunMain.storeSearchHistory(SR14, userId2);//user2
-		int preuser = aliyunMain.getUserSearchHistory(userId).size();
-		int preuser2 = aliyunMain.getUserSearchHistory(userId2).size();
-		aliyunMain.migrateAlltheUsersSearchHistory();
+		AliyunMain.storeSearchHistory(SR, userId);
+		AliyunMain.storeSearchHistory(SR2, userId2);//user2
+		AliyunMain.storeSearchHistory(SR3, userId);
+		AliyunMain.storeSearchHistory(SR4, userId2);//user2
+		AliyunMain.storeSearchHistory(SR5, userId);
+		AliyunMain.storeSearchHistory(SR6, userId2);//user2
+		AliyunMain.storeSearchHistory(SR7, userId);
+		AliyunMain.storeSearchHistory(SR8, userId2);//user2
+		AliyunMain.storeSearchHistory(SR9, userId);
+		AliyunMain.storeSearchHistory(SR10, userId2);//user2
+		AliyunMain.storeSearchHistory(SR11, userId);
+		AliyunMain.storeSearchHistory(SR12, userId2);//user2
+		AliyunMain.storeSearchHistory(SR13, userId);
+		AliyunMain.storeSearchHistory(SR14, userId2);//user2
+		int preuser = AliyunMain.getUserSearchHistory(userId).size();
+		int preuser2 = AliyunMain.getUserSearchHistory(userId2).size();
+		AliyunMain.migrateAlltheUsersSearchHistory();
 		//Test for user
 		String rediskey = DatabaseConfig.redisSearchHistoryPrefix+userId;		
 		int storage = redis.lrange(rediskey, 0,redis.llen(rediskey)-1).size();
@@ -392,14 +391,14 @@ public class AliyunS3Test {
 			fail();
 		}
 
-		list = aliyunMain.getUserSearchHistory(userId);
+		list = AliyunMain.getUserSearchHistory(userId);
 		if(list.size()==preuser){
 			//Passed;
 		}else{
 			fail();
 		}
 
-		list = aliyunMain.getUserSearchHistory(userId2);
+		list = AliyunMain.getUserSearchHistory(userId2);
 		if(list.size()==preuser2){
 			//Passed;
 		}else{
@@ -419,27 +418,27 @@ public class AliyunS3Test {
 		String imgSize = ImageConfig.imgSize_m;
 		String imgName = driver_1_Profile+imgSize+userId;
 		File file = new File(ServerConfig.pathToSearchHistoryFolder+imgName+".png");
-		aliyunMain.uploadImg(userId, file, imgName, ServerConfig.DriverVerificationBucket,false);
+		AliyunMain.uploadImg(userId, file, imgName, ServerConfig.DriverVerificationBucket,false);
 		
 		//Driver 2
 		int user2Id = 2;
 		String driver_2_Profile = ImageConfig.driverVerificationImgPrefix;		
 		imgName = driver_2_Profile+imgSize+user2Id;
 		file = new File(ServerConfig.pathToSearchHistoryFolder+imgName+".png");
-		aliyunMain.uploadImg(user2Id, file, imgName, ServerConfig.DriverVerificationBucket,false);
+		AliyunMain.uploadImg(user2Id, file, imgName, ServerConfig.DriverVerificationBucket,false);
 		
 		//Passenger Front
 		int user3Id = 3;
 		String driver_3_Profile = ImageConfig.passengerVerificationFrontImgPrefix;		
 		imgName = driver_3_Profile+imgSize+user3Id;
 		file = new File(ServerConfig.pathToSearchHistoryFolder+imgName+".png");
-		aliyunMain.uploadImg(user3Id, file, imgName, ServerConfig.PassengerVerificationBucket,false);
+		AliyunMain.uploadImg(user3Id, file, imgName, ServerConfig.PassengerVerificationBucket,false);
 		
 		//Passenger Back
 		driver_3_Profile = ImageConfig.passengerVerificationBackImgPrefix;		
 		imgName = driver_3_Profile+imgSize+user3Id;
 		file = new File(ServerConfig.pathToSearchHistoryFolder+imgName+".png");
-		aliyunMain.uploadImg(user3Id, file, imgName, ServerConfig.PassengerVerificationBucket,false);
+		AliyunMain.uploadImg(user3Id, file, imgName, ServerConfig.PassengerVerificationBucket,false);
 		
 	}
 }
