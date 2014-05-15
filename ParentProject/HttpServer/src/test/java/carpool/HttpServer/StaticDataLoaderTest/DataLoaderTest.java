@@ -1,4 +1,4 @@
-package carpool.HttpServer.StaticDataLoaderTest;
+package carpool.HttpServer.staticDataLoaderTest;
 
 import static org.junit.Assert.*;
 
